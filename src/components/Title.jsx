@@ -9,7 +9,7 @@ const Title = ({ text, className }) => {
       transition={{ duration: 0.8 }}
       className={`relative inline-block ${className}`}
     >
-      <h2 className="text-3xl font-bold text-white">
+      <h2 className=" text-2xl font-bold text-white">
         {text}
       </h2>
       <motion.div
