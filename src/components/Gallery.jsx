@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
 
-import img1 from '../assets/projects/cienma/image-04.jpg';
+import img1 from '../assets/projects/cienma/image-08.jpg'
 import img2 from '../assets/projects/Culture/image-23.jpg';
 import img3 from '../assets/projects/DIRIYAH BIENNIAL/image-29.jpg';
 import img4 from '../assets/projects/Alfas project/main.jpg';
