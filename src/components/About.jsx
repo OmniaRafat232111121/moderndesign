@@ -1,11 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Title from './Title';
+import { ar } from '../locales/ar'; // Importing ar directly
 
-const About = () => {
+const About = ({ language }) => {  // Accept language as a prop
+  console.log(language,"language")
+  const aboutText = language === 'ar' ? ar.aboutText : "MODERN DESIGN COMPANY WAS ESTABLISHED..."; // Add your English text
+
   return (
     <motion.div
-     id="about"
+      id="about"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
@@ -13,7 +17,8 @@ const About = () => {
     >
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-         <Title text="About us"/>
+          <Title text={language === 'ar' ? ar.about : "About Us"} />
+          
           <div className="md:flex-grow flex justify-end">
             <div className="bg-gray-600 w-12 h-12 rounded-lg transform rotate-45"></div>
           </div>
@@ -25,19 +30,12 @@ const About = () => {
             transition={{ duration: 1 }}
             className="text-lg leading-8 tracking-wider"
           >
-            MODERN DESIGN COMPANY WAS ESTABLISHED IN LATE 2017 WITH A SMALL TEAM
-            AND A CLEAR VISION. OUR VISION HAS HELPED US OVERCOME NUMEROUS
-            CHALLENGES, AND MOST IMPORTANTLY, WE HAVE BEEN ABLE TO ACHIEVE MANY
-            SUCCESSES BY FIRMLY BELIEVING THAT THE KEY TO OUR SUCCESS LIES IN
-            OUR COMMITMENT TO ESTABLISHING OURSELVES AS A SPECIALIZED GROUP THAT
-            DELIVERS CREATIVE PROJECTS AND HIGH-QUALITY WORK. WE HAVE FULL
-            CONFIDENCE THAT OUR ENTIRE TEAM SHARES THIS VISION AND WORKS TOWARDS
-            IMPLEMENTING IT IN ALL OUR DAILY ACTIVITIES.
+            {aboutText}
           </motion.p>
         </div>
         <div className="md:flex-grow flex justify-end">
-            <div className="bg-gray-600 w-12 h-12 rounded-lg transform rotate-45"></div>
-          </div>
+          <div className="bg-gray-600 w-12 h-12 rounded-lg transform rotate-45"></div>
+        </div>
       </div>
     </motion.div>
   );

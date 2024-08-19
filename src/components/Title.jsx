@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Title = ({ text, className }) => {
+const Title = ({ text, className,language  }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className={`relative inline-block ${className}`}
+      className={`relative inline-block ${className} ${language === 'ar' ? 'text-right' : 'text-left'} `}
     >
       <h2 className=" text-2xl font-bold text-white">
         {text}

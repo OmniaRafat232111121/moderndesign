@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
 
-import img1 from '../assets/projects/cienma/image-04.jpg';
+import img1 from '../assets/projects/cienma/image-08.jpg'
 import img2 from '../assets/projects/Culture/image-23.jpg';
 import img3 from '../assets/projects/DIRIYAH BIENNIAL/image-29.jpg';
 import img4 from '../assets/projects/Alfas project/main.jpg';
@@ -12,7 +12,9 @@ import img7 from '../assets/projects/National Day/main.jpg';
 import img8 from '../assets/projects/BOOTHS/image-87.jpg';
 import img9 from '../assets/projects/Fairgrounds/main.jpg';
 import img10 from '../assets/projects/Diriyah camps/main.jpg';
-const Gallery = () => {
+import { ar } from '../locales/ar';
+import Title from './Title';
+const Gallery = ({ language }) => {
   const galleryImages = [
     { id: 1, src: img1, alt: 'Image 1' },
     { id: 2, src: img2, alt: 'Image 2' },
@@ -53,8 +55,9 @@ const Gallery = () => {
   return (
     <div className="bg-gray-900 text-white py-10 cursor-pointer">
       <div className="container mx-auto px-6 md:px-12">
-        <h2 className="text-3xl font-bold text-center mb-6">Our Gallery</h2>
-        <Slider {...settings}>
+      <Title text=  {language === 'ar' ? ar.galleryTitle : 'Our Gallery'}/>
+      
+        <Slider {...settings} className='mt-8'>
           {galleryImages.map((image) => (
             <motion.div
               key={image.id}

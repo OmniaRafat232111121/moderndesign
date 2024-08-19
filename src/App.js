@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 import About from './components/About';
 import HeroSection from './components/HeroSection';
@@ -10,16 +11,21 @@ import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 
 function App() {
+  const [language, setLanguage] = useState('en');
+
+  const toggleLanguage = () => {
+    setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'ar' : 'en'));
+  };
+
   return (
-    <div className="App">
-    <Navbar/>
-  <HeroSection/>
-  <About/>
-       <Projects/>  
-       <Gallery/> 
-       <Partners/>  
-       <Footer/>
-        
+    <div className={`App ${language === 'ar' ? 'rtl' : 'ltr'}`}>
+      <Navbar language={language} toggleLanguage={toggleLanguage} />
+      <HeroSection language={language} />
+      <About language={language} />
+      <Projects language={language} />
+      <Gallery language={language} />
+      <Partners language={language} />
+      <Footer language={language} />
     </div>
   );
 }

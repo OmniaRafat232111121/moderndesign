@@ -29,15 +29,10 @@ let strings = new LocalizedStrings({
   ar: ar,
 });
 
-const Navbar = () => {
-  const [language, setLanguage] = useState('en');
+const Navbar = ({ language, toggleLanguage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleLanguage = () => {
-    const newLanguage = language === 'en' ? 'ar' : 'en';
-    setLanguage(newLanguage);
-    strings.setLanguage(newLanguage);
-  };
+  strings.setLanguage(language);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -60,7 +55,7 @@ const Navbar = () => {
         to={item.href}
         smooth={true}
         duration={500}
-        className={`text-white hover:text-heading px-3 py-2 text-md  cursor-pointer
+        className={`text-white hover:text-heading px-3 py-2 text-md cursor-pointer
           font-medium transition-colors duration-300 ${
             !isMobile ? 'border-transparent hover:border-secondary' : ''
           } ${language === 'en' ? 'font-en' : 'font-ar'}`}
@@ -109,7 +104,7 @@ const Navbar = () => {
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                 <FaInstagram
                   size={24}
-                  className="text-white hover:text-heading transition duration-300"
+                  className="text-white hover:text-heading transition duration-300 mr-3"
                 />
               </a>
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
@@ -129,16 +124,18 @@ const Navbar = () => {
             {/* Language Toggle and Contact Button */}
             <div className="flex items-center space-x-4">
               <button
-                className={`text-white flex items-center px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 ${language === 'en' ? 'font-en' : 'font-ar'}`}
+                className={`text-white flex items-center px-4 py-2 
+                  rounded-md text-md font-medium transition-colors duration-300 
+                  ${language === 'en' ? 'font-en' : 'font-ar'}`}
                 onClick={toggleLanguage}
               >
                 {language === 'en' ? (
                   <>
-                    <FaGlobeAmericas className="mr-2" /> AR
+                    <FaGlobeAmericas className="mr-2" />  AR
                   </>
                 ) : (
                   <>
-                    <FaGlobe className="mr-2" /> EN
+                    <FaGlobe className="m-2" />  EN
                   </>
                 )}
               </button>
@@ -171,7 +168,7 @@ const Navbar = () => {
                 <FaInstagram size={20} className="text-white hover:text-gray-400" />
               </a>
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <FaFacebook size={20} className="text-white hover:text-gray-400" />
+                <FaFacebook size={20} className="text-white hover:text-gray-400 " />
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter size={20} className="text-white hover:text-gray-400" />
