@@ -28,3 +28,9 @@ body {
   background: rgb(16,68,72);
   background: linear-gradient(335deg, rgba(16,68,72,1) 9%, rgba(24,145,125,0.8604691876750701) 83%);
 }
+.rtl {
+  direction: rtl;
+}
+.ltr {
+  direction: ltr;
+}
