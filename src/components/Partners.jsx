@@ -61,6 +61,8 @@ const Partners = () => {
               src={img}
               alt={`Partner ${index + 1}`}
               className="rounded-md object-contain mx-auto h-auto w-[70%]"
+              loading="lazy"
+
             />
           </motion.div>
         ))}

@@ -90,6 +90,8 @@ const Projects = () => {
                 transition={{ duration: 0.3 }}
                 src={project.image}
                 alt={project.title}
+                loading="lazy"
+
                 className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
               />
               <h3 className="  mb-2">
