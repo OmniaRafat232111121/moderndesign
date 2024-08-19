@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Projects from './components/Projects';
 import Partners from './components/Partners';
 import Footer from './components/Footer';
+import Gallery from './components/Gallery';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
     <Navbar/>
   <HeroSection/>
   <About/>
-       <Projects/>   
+       <Projects/>  
+       <Gallery/> 
        <Partners/>  
        <Footer/>
         
