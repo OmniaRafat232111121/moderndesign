@@ -8,7 +8,10 @@ import img3 from '../assets/projects/DIRIYAH BIENNIAL/image-29.jpg';
 import img4 from '../assets/projects/Alfas project/main.jpg';
 import img5 from '../assets/projects/Gamers/image-70.jpg';
 import img6 from '../assets/projects/mas/image-37.jpg';
-
+import img7 from '../assets/projects/National Day/main.jpg';
+import img8 from '../assets/projects/BOOTHS/image-87.jpg';
+import img9 from '../assets/projects/Fairgrounds/main.jpg';
+import img10 from '../assets/projects/Diriyah camps/main.jpg';
 const Gallery = () => {
   const galleryImages = [
     { id: 1, src: img1, alt: 'Image 1' },
@@ -17,6 +20,11 @@ const Gallery = () => {
     { id: 4, src: img4, alt: 'Image 4' },
     { id: 5, src: img5, alt: 'Image 5' },
     { id: 6, src: img6, alt: 'Image 6' },
+    { id: 7, src: img7, alt: 'Image 7' },
+    { id: 8, src: img8, alt: 'Image 8' },
+    { id: 9, src: img9, alt: 'Image 9' },
+    { id: 10, src: img10, alt: 'Image 10' },
+
   ];
 
   const settings = {
