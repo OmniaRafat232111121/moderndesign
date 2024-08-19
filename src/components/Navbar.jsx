@@ -11,46 +11,24 @@ import {
   FaTwitter,
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import LocalizedStrings from 'react-localization';
-import { ar } from '../locales/ar';
+import { ar } from '../locales/ar'; // Importing ar directly
 import { Link as ScrollLink } from 'react-scroll';
 
-let strings = new LocalizedStrings({
-  en: {
-    home: "Home",
-    about: "About Us",
-    portfolio: "Our Work",
-    services: "Services",
-    blog: "Blog",
-    contact: "Contact",
-    button: "Contact Us",
-    partners: "Partners",
-  },
-  ar: ar,
-});
-
-const Navbar = () => {
-  const [language, setLanguage] = useState('en');
+const Navbar = ({ language, toggleLanguage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleLanguage = () => {
-    const newLanguage = language === 'en' ? 'ar' : 'en';
-    setLanguage(newLanguage);
-    strings.setLanguage(newLanguage);
-  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const menuItems = [
-    { name: strings.home, href: "home" },
-    { name: strings.about, href: "about" },
-    { name: strings.portfolio, href: "portfolio" },
-    { name: strings.services, href: "services" },
-    { name: strings.blog, href: "blog" },
-    { name: strings.partners, href: "partners" },
-    { name: strings.contact, href: "contact" },
+    { name: language === 'ar' ? ar.home : "Home", href: "home" },
+    { name: language === 'ar' ? ar.about : "About Us", href: "about" },
+    { name: language === 'ar' ? ar.portfolio : "Our Work", href: "portfolio" },
+    { name: language === 'ar' ? ar.services : "Services", href: "services" },
+    { name: language === 'ar' ? ar.blog : "Blog", href: "blog" },
+    { name: language === 'ar' ? ar.partners : "Partners", href: "partners" },
+    { name: language === 'ar' ? ar.contact : "Contact", href: "contact" },
   ];
 
   const renderMenuItems = (isMobile = false) =>
@@ -60,7 +38,7 @@ const Navbar = () => {
         to={item.href}
         smooth={true}
         duration={500}
-        className={`text-white hover:text-heading px-3 py-2 text-md  cursor-pointer
+        className={`text-white hover:text-heading px-3 py-2 text-md cursor-pointer
           font-medium transition-colors duration-300 ${
             !isMobile ? 'border-transparent hover:border-secondary' : ''
           } ${language === 'en' ? 'font-en' : 'font-ar'}`}
@@ -95,8 +73,8 @@ const Navbar = () => {
           </div>
 
           {/* Navigation + Contact + Language Section for larger screens */}
-          <div className={`hidden xl:flex items-center space-x-4 
-            ${language === 'ar' ? 'order-1 flex-row-reverse' : 'order-2'}`}>
+          <div className={`hidden xl:flex items-center space-x-4 ${
+            language === 'ar' ? 'order-1 flex-row-reverse' : 'order-2'}`}>
             {renderMenuItems()}
             {/* Social Media Icons */}
             <div className="flex space-x-4">
@@ -146,7 +124,7 @@ const Navbar = () => {
                 className={`text-white bg-secondary ${language === 'en' ? 'font-en' : 'font-ar'}
                  px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 `}
               >
-                {strings.button}
+                {language === 'ar' ? ar.button : "Contact Us"}
               </button>
             </div>
           </div>
@@ -159,7 +137,6 @@ const Navbar = () => {
             className="fixed inset-0 bg-primary flex flex-col justify-center items-center 
             z-50"
           >
-            {/* Close Button */}
             {renderMenuItems(true)}
 
             {/* Social Media Icons for md (768px) and lg (1024px) screens */}
@@ -199,7 +176,7 @@ const Navbar = () => {
                  px-4 py-2 rounded-md text-md font-medium transition-colors duration-300"
                 onClick={toggleMenu}
               >
-                {strings.button}
+                {language === 'ar' ? ar.button : "Contact Us"}
               </button>
             </div>
           </motion.div>

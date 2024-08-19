@@ -25,10 +25,9 @@ import img21 from '../assets/projects/King Solomon Protectorate/main.jpg';
 import img22 from '../assets/projects/Diriyah camps/main.jpg';
 import img23 from '../assets/projects/Misk project/main.jpg';
 import img24 from '../assets/projects/tea fair/main.jpg';
+import { ar } from '../locales/ar'; // Importing Arabic translations
 
 import Title from './Title';
-
-// Utility function to capitalize the first letter of each word
 const capitalizeTitle = (title) => {
   return title
     .split(' ')
@@ -36,36 +35,32 @@ const capitalizeTitle = (title) => {
     .join(' ');
 };
 
-const Projects = () => {
+const Projects = ({ language }) => {  // Accept language as a prop
   const projectList = [
-    { id: 'project1', title: 'FILM CRITICISM PROJECT', image: img1 },
-    { id: 'project2', title: 'CULTURE FIELD PROJECT', image: img2 },
-    { id: 'project3', title: 'DIRIYAH BIENNIAL PROJECT', image: img3 },
-    { id: 'project4', title: 'JAMILA AND BUTHAINA PLAY PROJECT, MINISTRY OF CULTURE', image: img4 },
-    { id: 'project5', title: 'THE RETURN TO RIYADH FESTIVAL PROJECT', image: img5 },
-    { id: 'project6', title: 'UNESCO HERITAGE PROJECT MINISTRY OF CULTURE', image: img6 },
-    { id: 'project7', title: 'DAKAR RALLY PROJECT', image: img7 },
-    { id: 'project8', title: 'SAUDI TOUR PROJECT', image: img8 },
-    { id: 'project9', title: 'THE SINGING PROJECT IN CLASSICAL ARABIC AT THE MINISTRY OF CULTURE', image: img9 },
-    { id: 'project10', title: 'Medina Book Fair', image: img10 },
-    { id: 'project11', title: 'Ministry of Tourism', image: img11 },
-    { id: 'project12', title: 'Fairgrounds', image: img12 },
-    { id: 'project13', title: 'National Day', image: img13 },
-    { id: 'project14', title: 'Alfas project', image: img14 },
-
-    { id: 'project15', title: 'Space Project', image: img15 },
-
-    { id: 'project16', title: 'Almarai Project', image: img16},
-    { id: 'project17', title: 'Founding Day', image: img17},
-    { id: 'project18', title: 'Saudi Federation', image: img18},
-    { id: 'project19', title: 'LEAP Project', image: img19},
-    { id: 'project20', title: 'LEAP Project', image: img20},
-    { id: 'project21', title: 'King Solomon Protectorate', image: img21},
-    { id: 'project22', title: 'Diriyah camps', image: img22},
-    { id: 'project23', title: 'Misk project', image: img23},
-    { id: 'project24', title: 'tea fair', image: img24},
-
-
+    { id: 'project1', title: 'FILM CRITICISM PROJECT', titleAr: ar.project1, image: img1 },
+    { id: 'project2', title: 'CULTURE FIELD PROJECT', titleAr: ar.project2, image: img2 },
+    { id: 'project3', title: 'DIRIYAH BIENNIAL PROJECT', titleAr: ar.project3, image: img3 },
+    { id: 'project4', title: 'JAMILA AND BUTHAINA PLAY PROJECT, MINISTRY OF CULTURE', titleAr: ar.project4, image: img4 },
+    { id: 'project5', title: 'THE RETURN TO RIYADH FESTIVAL PROJECT', titleAr: ar.project5, image: img5 },
+    { id: 'project6', title: 'UNESCO HERITAGE PROJECT MINISTRY OF CULTURE', titleAr: ar.project6, image: img6 },
+    { id: 'project7', title: 'DAKAR RALLY PROJECT', titleAr: ar.project7, image: img7 },
+    { id: 'project8', title: 'SAUDI TOUR PROJECT', titleAr: ar.project8, image: img8 },
+    { id: 'project9', title: 'THE SINGING PROJECT IN CLASSICAL ARABIC AT THE MINISTRY OF CULTURE', titleAr: ar.project9, image: img9 },
+    { id: 'project10', title: 'Medina Book Fair', titleAr: ar.project10, image: img10 },
+    { id: 'project11', title: 'Ministry of Tourism', titleAr: ar.project11, image: img11 },
+    { id: 'project12', title: 'Fairgrounds', titleAr: ar.project12, image: img12 },
+    { id: 'project13', title: 'National Day', titleAr: ar.project13, image: img13 },
+    { id: 'project14', title: 'Alfas project', titleAr: ar.project14, image: img14 },
+    { id: 'project15', title: 'Space Project', titleAr: ar.project15, image: img15 },
+    { id: 'project16', title: 'Almarai Project', titleAr: ar.project16, image: img16},
+    { id: 'project17', title: 'Founding Day', titleAr: ar.project17, image: img17},
+    { id: 'project18', title: 'Saudi Federation', titleAr: ar.project18, image: img18},
+    { id: 'project19', title: 'LEAP Project', titleAr: ar.project19, image: img19},
+    { id: 'project20', title: 'LEAP Project', titleAr: ar.project20, image: img20},
+    { id: 'project21', title: 'King Solomon Protectorate', titleAr: ar.project21, image: img21},
+    { id: 'project22', title: 'Diriyah camps', titleAr: ar.project22, image: img22},
+    { id: 'project23', title: 'Misk project', titleAr: ar.project23, image: img23},
+    { id: 'project24', title: 'tea fair', titleAr: ar.project24, image: img24},
   ];
 
   return (
@@ -77,8 +72,7 @@ const Projects = () => {
       className="bg-primary text-white py-10"
     >
       <div className="container mx-auto px-6 md:px-12">
-        <Title text="Projects" />
-
+        <Title text={language === 'ar' ? ar.projectsTitle : "Projects"} />  {/* Title based on language */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
           {projectList.map((project, index) => (
             <div
@@ -91,11 +85,10 @@ const Projects = () => {
                 src={project.image}
                 alt={project.title}
                 loading="lazy"
-
                 className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
               />
               <h3 className="  mb-2">
-                {capitalizeTitle(project.title)}
+                {capitalizeTitle(language === 'ar' ? project.titleAr : project.title)}
               </h3>
               <p>{project.description}</p>
             </div>
