@@ -25,8 +25,12 @@ let strings = new LocalizedStrings({
     contact: "Contact",
     button: "Contact Us",
     partners: "Partners",
+    modernDesign: "Modern Design", // Added English text
   },
-  ar: ar,
+  ar: {
+    ...ar,
+    modernDesign: "التصميم الحديث", // Added Arabic text
+  },
 });
 
 const Navbar = ({ language, toggleLanguage }) => {
@@ -55,7 +59,7 @@ const Navbar = ({ language, toggleLanguage }) => {
         to={item.href}
         smooth={true}
         duration={500}
-        className={`text-primary hover:text-heading px-3 py-2 text-md cursor-pointer
+        className={`text-white hover:text-heading px-3 py-2 text-md cursor-pointer
           font-medium transition-colors duration-300 ${
             !isMobile ? 'border-transparent hover:border-secondary' : ''
           } ${language === 'en' ? 'font-en' : 'font-ar'}`}
@@ -67,23 +71,25 @@ const Navbar = ({ language, toggleLanguage }) => {
 
   return (
     <nav
-      className={`bg-white  border-b border-gray-200 ${
-        language === 'ar' ? 'rtl' : 'ltr'
-      }`}
+      dir={language === 'ar' ? 'rtl' : 'ltr'}
+      className={`bg-primary border-b border-gray-200`}
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex justify-between h-[100px] items-center`}>
           
-          {/* Logo Section */}
-          <div className={`flex items-center ${language === 'ar' ? 'order-2' : 'order-1'}`}>
-            <img src={logo} alt="Logo" className="h-[50px] sm:h-[130px]" />
+          {/* Logo and Modern Design Text Section */}
+          <div className={`flex items-center ${language === 'ar' ? 'order-2 ml-auto' : 'order-1 mr-auto'}`}>
+            <img src={logo} alt="Logo" className="h-[50px] sm:h-[130px] ${language === 'ar' ? 'ml-4' : 'mr-4'}" />
+            <span className="text-white text-lg font-bold">
+              {strings.modernDesign}
+            </span>
           </div>
 
           {/* Hamburger Icon - Visible on md (768px) and lg (1024px) screens */}
           <div className="flex items-center md:flex lg:flex xl:hidden order-3">
             <button
               onClick={toggleMenu}
-              className="text-primary focus:outline-none z-[100000]"
+              className="text-white focus:outline-none z-[100000]"
             >
               {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
@@ -91,32 +97,32 @@ const Navbar = ({ language, toggleLanguage }) => {
 
           {/* Navigation + Contact + Language Section for larger screens */}
           <div className={`hidden xl:flex items-center space-x-4 
-            ${language === 'ar' ? 'order-1 flex-row-reverse' : 'order-2'}`}>
+            ${language === 'ar' ? 'order-1 flex-row-reverse ml-auto' : 'order-2 mr-auto'}`}>
             {renderMenuItems()}
             {/* Social Media Icons */}
             <div className="flex space-x-4">
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin
                   size={24}
-                  className="text-primary hover:text-heading transition duration-300"
+                  className="text-white hover:text-heading transition duration-300"
                 />
               </a>
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                 <FaInstagram
                   size={24}
-                  className="text-primary hover:text-heading transition duration-300 mr-3"
+                  className="text-white hover:text-heading transition duration-300 mr-3"
                 />
               </a>
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <FaFacebook
                   size={24}
-                  className="text-primary hover:text-heading transition duration-300"
+                  className="text-white hover:text-heading transition duration-300"
                 />
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter
                   size={24}
-                  className="text-primary hover:text-heading transition duration-300"
+                  className="text-white hover:text-heading transition duration-300"
                 />
               </a>
             </div>
@@ -124,7 +130,7 @@ const Navbar = ({ language, toggleLanguage }) => {
             {/* Language Toggle and Contact Button */}
             <div className="flex items-center space-x-4">
               <button
-                className={`text-primary flex items-center px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 ${language === 'en' ? 'font-en' : 'font-ar'}`}
+                className={`text-white flex items-center px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 ${language === 'en' ? 'font-en' : 'font-ar'}`}
                 onClick={toggleLanguage}
               >
                 {language === 'en' ? (
@@ -138,7 +144,7 @@ const Navbar = ({ language, toggleLanguage }) => {
                 )}
               </button>
               <button
-                className={`text-primary bg-secondary ${language === 'en' ? 'font-en' : 'font-ar'}
+                className={`text-white bg-secondary ${language === 'en' ? 'font-en' : 'font-ar'}
                  px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 `}
               >
                 {strings.button}
@@ -160,23 +166,23 @@ const Navbar = ({ language, toggleLanguage }) => {
             {/* Social Media Icons for md (768px) and lg (1024px) screens */}
             <div className="flex space-x-4 mt-4">
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={20} className="text-primary hover:text-gray-400" />
+                <FaLinkedin size={20} className="text-white hover:text-gray-400" />
               </a>
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={20} className="text-primary hover:text-gray-400" />
+                <FaInstagram size={20} className="text-white hover:text-gray-400" />
               </a>
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <FaFacebook size={20} className="text-primary hover:text-gray-400" />
+                <FaFacebook size={20} className="text-white hover:text-gray-400" />
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter size={20} className="text-primary hover:text-gray-400" />
+                <FaTwitter size={20} className="text-white hover:text-gray-400" />
               </a>
             </div>
 
             {/* Language Toggle and Contact Button */}
             <div className="flex flex-col items-center space-y-4 mt-4">
               <button
-                className={`text-primary flex items-center px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 ${language === 'en' ? 'font-en' : 'font-ar'}`}
+                className={`text-white flex items-center px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 ${language === 'en' ? 'font-en' : 'font-ar'}`}
                 onClick={toggleLanguage}
               >
                 {language === 'en' ? (
