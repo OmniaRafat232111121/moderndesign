@@ -85,6 +85,19 @@ const HeroSection = () => {
             style={{ display: 'inline-block' }}
           />
         </motion.h1>
+
+
+        <motion.p
+          className="text-xl mt-4 text-white"
+          initial="hidden"
+          animate={controls}
+          variants={{
+            hidden: { opacity: 0, x: 100 },
+            visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 2 } },
+          }}
+        >
+          We specialize in creating exceptional and unforgettable events with a focus on modern design and innovative strategies.
+        </motion.p>
       </div>
     </section>
   );
