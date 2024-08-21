@@ -53,7 +53,7 @@ const Gallery = ({ language }) => {
   };
 
   return (
-    <div className="bg-gray-900 text-white py-10 cursor-pointer">
+    <div className="background_footer text-white py-10 cursor-pointer">
       <div className="container mx-auto px-6 md:px-12">
       <Title text=  {language === 'ar' ? ar.galleryTitle : 'Our Gallery'}/>
       

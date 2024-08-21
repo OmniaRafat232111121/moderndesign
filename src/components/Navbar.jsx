@@ -55,7 +55,7 @@ const Navbar = ({ language, toggleLanguage }) => {
         to={item.href}
         smooth={true}
         duration={500}
-        className={`text-white hover:text-heading px-3 py-2 text-md cursor-pointer
+        className={`text-primary hover:text-heading px-3 py-2 text-md cursor-pointer
           font-medium transition-colors duration-300 ${
             !isMobile ? 'border-transparent hover:border-secondary' : ''
           } ${language === 'en' ? 'font-en' : 'font-ar'}`}
@@ -67,7 +67,7 @@ const Navbar = ({ language, toggleLanguage }) => {
 
   return (
     <nav
-      className={`bg-primary border-b border-gray-200 ${
+      className={`bg-white  border-b border-gray-200 ${
         language === 'ar' ? 'rtl' : 'ltr'
       }`}
     >
@@ -76,14 +76,14 @@ const Navbar = ({ language, toggleLanguage }) => {
           
           {/* Logo Section */}
           <div className={`flex items-center ${language === 'ar' ? 'order-2' : 'order-1'}`}>
-            <img src={logo} alt="Logo" className="h-[50px] sm:h-[80px]" />
+            <img src={logo} alt="Logo" className="h-[50px] sm:h-[130px]" />
           </div>
 
           {/* Hamburger Icon - Visible on md (768px) and lg (1024px) screens */}
           <div className="flex items-center md:flex lg:flex xl:hidden order-3">
             <button
               onClick={toggleMenu}
-              className="text-white focus:outline-none z-[100000]"
+              className="text-primary focus:outline-none z-[100000]"
             >
               {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
@@ -98,25 +98,25 @@ const Navbar = ({ language, toggleLanguage }) => {
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin
                   size={24}
-                  className="text-white hover:text-heading transition duration-300"
+                  className="text-primary hover:text-heading transition duration-300"
                 />
               </a>
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                 <FaInstagram
                   size={24}
-                  className="text-white hover:text-heading transition duration-300 mr-3"
+                  className="text-primary hover:text-heading transition duration-300 mr-3"
                 />
               </a>
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <FaFacebook
                   size={24}
-                  className="text-white hover:text-heading transition duration-300"
+                  className="text-primary hover:text-heading transition duration-300"
                 />
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter
                   size={24}
-                  className="text-white hover:text-heading transition duration-300"
+                  className="text-primary hover:text-heading transition duration-300"
                 />
               </a>
             </div>
@@ -124,7 +124,7 @@ const Navbar = ({ language, toggleLanguage }) => {
             {/* Language Toggle and Contact Button */}
             <div className="flex items-center space-x-4">
               <button
-                className={`text-white flex items-center px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 ${language === 'en' ? 'font-en' : 'font-ar'}`}
+                className={`text-primary flex items-center px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 ${language === 'en' ? 'font-en' : 'font-ar'}`}
                 onClick={toggleLanguage}
               >
                 {language === 'en' ? (
@@ -138,7 +138,7 @@ const Navbar = ({ language, toggleLanguage }) => {
                 )}
               </button>
               <button
-                className={`text-white bg-secondary ${language === 'en' ? 'font-en' : 'font-ar'}
+                className={`text-primary bg-secondary ${language === 'en' ? 'font-en' : 'font-ar'}
                  px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 `}
               >
                 {strings.button}
@@ -160,23 +160,23 @@ const Navbar = ({ language, toggleLanguage }) => {
             {/* Social Media Icons for md (768px) and lg (1024px) screens */}
             <div className="flex space-x-4 mt-4">
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={20} className="text-white hover:text-gray-400" />
+                <FaLinkedin size={20} className="text-primary hover:text-gray-400" />
               </a>
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={20} className="text-white hover:text-gray-400" />
+                <FaInstagram size={20} className="text-primary hover:text-gray-400" />
               </a>
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <FaFacebook size={20} className="text-white hover:text-gray-400" />
+                <FaFacebook size={20} className="text-primary hover:text-gray-400" />
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter size={20} className="text-white hover:text-gray-400" />
+                <FaTwitter size={20} className="text-primary hover:text-gray-400" />
               </a>
             </div>
 
             {/* Language Toggle and Contact Button */}
             <div className="flex flex-col items-center space-y-4 mt-4">
               <button
-                className={`text-white flex items-center px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 ${language === 'en' ? 'font-en' : 'font-ar'}`}
+                className={`text-primary flex items-center px-4 py-2 rounded-md text-md font-medium transition-colors duration-300 ${language === 'en' ? 'font-en' : 'font-ar'}`}
                 onClick={toggleLanguage}
               >
                 {language === 'en' ? (

@@ -9,8 +9,7 @@ module.exports = {
         primary: '#104448', // Example custom color
         heading: '#ffcf32',
         secondary: '#18917c',
-        customGreen: '#68d391',
-        customBlue: '#4299e1',
+        customGreen: '#4CAF50',
         customYellow: '#ecc94b',
       },
     },
