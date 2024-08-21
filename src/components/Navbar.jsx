@@ -79,8 +79,8 @@ const Navbar = ({ language, toggleLanguage }) => {
           
           {/* Logo and Modern Design Text Section */}
           <div className={`flex items-center ${language === 'ar' ? 'order-2 ml-auto' : 'order-1 mr-auto'}`}>
-            <img src={logo} alt="Logo" className="h-[50px] sm:h-[130px] ${language === 'ar' ? 'ml-4' : 'mr-4'}" />
-            <span className="text-white text-lg font-bold">
+            <img src={logo} alt="Logo" className={`h-[50px] sm:h-[130px] ${language === 'ar' ? 'ml-4' : 'mr-4'}`} />
+            <span className={`text-heading cursor-pointer font-semibold  hover:text-white  ${language === 'en' ? 'font-en' : 'font-ar'}`}>
               {strings.modernDesign}
             </span>
           </div>
