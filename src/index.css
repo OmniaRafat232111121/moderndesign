@@ -34,3 +34,14 @@ body {
 .ltr {
   direction: ltr;
 }
+
+@keyframes fadeInOutBorder {
+  0%, 100% {
+    opacity: 0;
+    border-color: white;
+  }
+  50% {
+    opacity: 1;
+    border-color: yellow;
+  }
+}

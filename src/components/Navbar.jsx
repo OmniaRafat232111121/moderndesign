@@ -80,15 +80,30 @@ const Navbar = ({ language, toggleLanguage }) => {
           </div>
 
           {/* Hamburger Icon - Visible on md (768px) and lg (1024px) screens */}
-          <div className="flex items-center md:flex lg:flex xl:hidden order-3">
+          {/* <div className="flex items-center md:flex lg:flex xl:hidden order-3">
             <button
               onClick={toggleMenu}
               className="text-white focus:outline-none z-[100000]"
             >
               {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
-          </div>
+          </div> */}
 
+
+          <div className="flex items-center md:flex lg:flex xl:hidden order-3">
+  <div className="p-2 bg-transparent rounded-full border-2 border-white">
+    <button
+      onClick={toggleMenu}
+      className="text-white focus:outline-none z-[100000] bg-heading hover:bg-primary rounded-full p-2 "
+    >
+      {isMenuOpen ? (
+        <FaTimes size={24} />
+      ) : (
+        <FaBars size={24} className="text-white" />
+      )}
+    </button>
+  </div>
+</div>
           {/* Navigation + Contact + Language Section for larger screens */}
           <div className={`hidden xl:flex items-center space-x-4 
             ${language === 'ar' ? 'order-1 flex-row-reverse' : 'order-2'}`}>

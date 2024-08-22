@@ -20,7 +20,6 @@ import img17 from '../assets/projects/Founding Day/main.jpg'
 
 import img18 from '../assets/projects/Saudi Federation/main.jpg'
 import img19 from '../assets/projects/LEAP Project/main.jpg'
-import img20 from '../assets/projects/LEAP Project/main.jpg'
 import img21 from '../assets/projects/King Solomon Protectorate/main.jpg';
 import img22 from '../assets/projects/Diriyah camps/main.jpg';
 import img23 from '../assets/projects/Misk project/main.jpg';
@@ -45,7 +44,6 @@ const Projects = ({ language }) => {  // Accept language as a prop
     { id: 'project6', title: 'UNESCO HERITAGE PROJECT MINISTRY OF CULTURE', titleAr: ar.project6, image: img6 },
     { id: 'project7', title: 'DAKAR RALLY PROJECT', titleAr: ar.project7, image: img7 },
     { id: 'project8', title: 'SAUDI TOUR PROJECT', titleAr: ar.project8, image: img8 },
-    { id: 'project9', title: 'THE SINGING PROJECT IN CLASSICAL ARABIC AT THE MINISTRY OF CULTURE', titleAr: ar.project9, image: img9 },
     { id: 'project10', title: 'Medina Book Fair', titleAr: ar.project10, image: img10 },
     { id: 'project11', title: 'Ministry of Tourism', titleAr: ar.project11, image: img11 },
     { id: 'project12', title: 'Fairgrounds', titleAr: ar.project12, image: img12 },
@@ -56,7 +54,6 @@ const Projects = ({ language }) => {  // Accept language as a prop
     { id: 'project17', title: 'Founding Day', titleAr: ar.project17, image: img17},
     { id: 'project18', title: 'Saudi Federation', titleAr: ar.project18, image: img18},
     { id: 'project19', title: 'LEAP Project', titleAr: ar.project19, image: img19},
-    { id: 'project20', title: 'LEAP Project', titleAr: ar.project20, image: img20},
     { id: 'project21', title: 'King Solomon Protectorate', titleAr: ar.project21, image: img21},
     { id: 'project22', title: 'Diriyah camps', titleAr: ar.project22, image: img22},
     { id: 'project23', title: 'Misk project', titleAr: ar.project23, image: img23},
