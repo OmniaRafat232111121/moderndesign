@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { TypeAnimation } from 'react-type-animation'; // Import the TypeAnimation component
-import v1 from '../assets/about/viedo.mp4'; // Import the video
+import { TypeAnimation } from 'react-type-animation'; 
+import v1 from '../assets/about/viedo.mp4'; 
+import { FaWhatsapp } from 'react-icons/fa';
 
 const HeroSection = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
-    threshold: 0.2, // Animation triggers when 20% of the component is in view
+    threshold: 0.2, 
   });
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   React.useEffect(() => {
     if (inView) {
@@ -47,8 +56,8 @@ const HeroSection = () => {
         loop
         playsInline
         controls
-        onPlay={handlePlay}   // Track when the video starts playing
-        onPause={handlePause} // Track when the video is paused
+        onPlay={handlePlay}  
+        onPause={handlePause} 
       >
         <source src={v1} type="video/mp4" />
         Your browser does not support the video tag.
@@ -72,20 +81,19 @@ const HeroSection = () => {
         >
           <TypeAnimation
             sequence={[
-              'Welcome to', // Types 'Welcome to'
-              1000, // Waits 1s
-              'Welcome to Modern Design Advertising Company', // Types 'Welcome to Modern Design Advertising Company'
-              2000, // Waits 2s
-              '', // Erase the whole text
-              1000, // Wait 1s before restarting
+              'Welcome to',
+              1000, 
+              'Welcome to Modern Design Advertising Company', 
+              2000, 
+              '', 
+              1000, 
             ]}
             wrapper="span"
             cursor={true}
-            repeat={Infinity} // Repeat indefinitely
+            repeat={Infinity} 
             style={{ display: 'inline-block' }}
           />
         </motion.h1>
-
 
         <motion.p
           className="text-xl mt-4 text-white"
@@ -99,6 +107,22 @@ const HeroSection = () => {
           We specialize in creating exceptional and unforgettable events with a focus on modern design and innovative strategies.
         </motion.p>
       </div>
+
+      {/* WhatsApp Floating Button */}
+      <div className="whatsapp-float fixed bottom-4 right-4 z-50">
+        <a
+          href={
+            isMobile
+              ? "https://api.whatsapp.com/send?phone=+966557480817"
+              : "https://web.whatsapp.com/send?phone=++966557480817"
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaWhatsapp size={32} color="#fff" />
+        </a>
+      </div>
+
     </section>
   );
 };

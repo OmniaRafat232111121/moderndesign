@@ -66,3 +66,30 @@ body {
     border-color: yellow;
   }
 }
+.whatsapp-float {
+  position: fixed;
+  bottom: 10%;
+  right: 0;
+  transform: translateY(50%);
+  background-color: #25d366;
+  padding: 15px 10px;
+  border-radius: 20px 0 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #20b858;
+  transform: translateY(50%) scale(1.1);
+}
+
+.whatsapp-float a {
+  color: white;
+  text-align: center;
+  display: block;
+}
+
+.whatsapp-float a:hover {
+  color: white;
+}
