@@ -1,18 +1,14 @@
 import React from 'react';
-// import backgroundImage from '../assets/projects/Book Fair/'; // Use the background image from your assets
 
 const ContactUs = () => {
   return (
-    <div className="relative bg-gray-900 text-white py-16">
+    <div className="relative text-white py-16">
       {/* Background Image Section */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        // style={{ backgroundImage: `url(${backgroundImage})` }}
-      ></div>
+      
 
       {/* Overlay Section with Text */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-64 bg-black bg-opacity-60">
-        <h2 className="text-3xl font-bold">Modern Design Advertising</h2>
+      <div className="relative z-10 flex flex-col items-center justify-center h-64 ">
+        <h2 className="text-4xl font-bold mb-2">Modern Design Advertising</h2>
         <p className="text-xl">Contact us</p>
       </div>
 
@@ -20,23 +16,23 @@ const ContactUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           
           {/* Contact Information */}
-          <div className="bg-yellow-500 p-8 rounded-lg shadow-lg">
+          <div className="bg-yellow-500 p-8 rounded-lg shadow-lg text-gray-900">
             <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
             <div className="mb-4">
-              <p><i className="fas fa-map-marker-alt"></i> 5181 Al-Huwaidi Street, Al-Musfat District, Riyadh, Kingdom of Saudi Arabia</p>
+              <p><i className="fas fa-map-marker-alt"></i> Saudi Arabia</p>
             </div>
             <div className="mb-4">
               <p><i className="fas fa-envelope"></i> info@leadprojects.net</p>
             </div>
             <div className="mb-4">
-              <p><i className="fas fa-phone"></i> +966 56 045 1500</p>
+              <p><i className="fas fa-phone"></i> </p>
             </div>
-            <div className="flex space-x-4">
-              <a href="#"><i className="fab fa-facebook"></i></a>
-              <a href="#"><i className="fab fa-twitter"></i></a>
-              <a href="#"><i className="fab fa-youtube"></i></a>
-              <a href="#"><i className="fab fa-linkedin"></i></a>
-              <a href="#"><i className="fab fa-instagram"></i></a>
+            <div className="flex space-x-4 text-2xl">
+              <a href="#" className="hover:text-gray-800"><i className="fab fa-facebook"></i></a>
+              <a href="#" className="hover:text-gray-800"><i className="fab fa-twitter"></i></a>
+              <a href="#" className="hover:text-gray-800"><i className="fab fa-youtube"></i></a>
+              <a href="#" className="hover:text-gray-800"><i className="fab fa-linkedin"></i></a>
+              <a href="#" className="hover:text-gray-800"><i className="fab fa-instagram"></i></a>
             </div>
           </div>
           
@@ -72,7 +68,7 @@ const ContactUs = () => {
               ></textarea>
               <button
                 type="submit"
-                className="mt-4 bg-yellow-500 text-gray-800 px-6 py-3 rounded-md font-bold hover:bg-yellow-600"
+                className="mt-4 bg-yellow-500 text-gray-900 px-6 py-3 rounded-md font-bold hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-600"
               >
                 Send
               </button>

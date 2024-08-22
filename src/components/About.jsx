@@ -35,7 +35,7 @@ const About = ({ language }) => {
     >
       <Title text={language === 'ar' ? ar.about : "About Us"} />
 
-      {/* Animated Balls */}
+      {/* Multiple Animated Circles */}
       <motion.div
         className="absolute bottom-0 right-0 bg-gray-200 w-8 h-8 rounded-full z-0"
         initial={{ y: 0 }}
@@ -43,56 +43,54 @@ const About = ({ language }) => {
         transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute top-10 right-10 bg-gray-200 w-10 h-10 rounded-full z-0"
+        className="absolute top-20 right-0 bg-gray-200 w-30 h-30 rounded-full z-0"
         initial={{ y: 25 }}
         animate={{ y: [-25, 25], opacity: [1, 0] }}
         transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute top-20 left-10 bg-gray-200 w-12 h-12 rounded-full z-0"
+        className="absolute top-40 right-10 bg-gray-200 w-12 h-12 rounded-full z-0"
         initial={{ y: 30 }}
         animate={{ y: [-30, 30], opacity: [1, 0] }}
         transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute bottom-10 left-20 bg-gray-200 w-5 h-5 rounded-full z-0"
+        className="absolute bottom-10 right-20 bg-gray-200 w-20 h-20 rounded-full z-0"
         initial={{ y: 10 }}
         animate={{ y: [-10, 10], opacity: [1, 0] }}
         transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute bottom-0 left-30 bg-gray-200 w-16 h-16 rounded-full z-0"
+        className="absolute bottom-20 right-30 bg-gray-200 w-16 h-16 rounded-full z-0"
         initial={{ y: 35 }}
         animate={{ y: [-35, 35], opacity: [1, 0] }}
         transition={{ repeat: Infinity, duration: 7, ease: 'easeInOut' }}
       />
+      {/* Additional Circles */}
       <motion.div
-        className="absolute top-40 right-20 bg-gray-200 w-20 h-20 rounded-full z-0"
+        className="absolute bottom-40 left-10 bg-gray-300 w-24 h-24 rounded-full z-0"
         initial={{ y: 20 }}
-        animate={{ y: [-100, -300], opacity: [1, 0] }}
-        transition={{ repeat: Infinity, duration: 5.5, ease: 'easeInOut' }}
+        animate={{ y: [-30, 30], opacity: [1, 0] }}
+        transition={{ repeat: Infinity, duration: 6.5, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute top-40 right-20 bg-gray-200 w-20 h-20 rounded-full z-0"
-        initial={{ y: 20 }}
-        animate={{ y: [10, -800], opacity: [1, 0] }}
-        transition={{ repeat: Infinity, duration: 5.5, ease: 'easeInOut' }}
+        className="absolute top-0 left-0 bg-gray-400 w-14 h-14 rounded-full z-0"
+        initial={{ y: 15 }}
+        animate={{ y: [-20, 20], opacity: [1, 0] }}
+        transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute top-40 right-20 bg-gray-200 w-20 h-20 rounded-full z-0"
+        className="absolute top-40 right-40 bg-gray-200 w-10 h-10 rounded-full z-0"
         initial={{ y: 10 }}
-        animate={{ y: [1, -500], opacity: [1, 0] }}
-        transition={{ repeat: Infinity, duration: 5.5, ease: 'easeInOut' }}
+        animate={{ y: [-10, 10], opacity: [1, 0] }}
+        transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
       />
-
-      {/* Central Circle */}
-      {/* <motion.div
-        className="absolute inset-0 m-auto bg-gray-200 w-32 h-32 rounded-full z-0"
-        initial={{ scale: 0 }}
-        animate={{ scale: [1, 1.5, 0] }}
-        transition={{ repeat: Infinity, duration: 10, ease: 'easeInOut' }}
-        style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
-      /> */}
+      <motion.div
+        className="absolute top-10 left-30 bg-gray-400 w-18 h-18 rounded-full z-0"
+        initial={{ y: 30 }}
+        animate={{ y: [-20, 20], opacity: [1, 0] }}
+        transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
+      />
 
       <div className="container mx-auto px-4 md:px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mt-8">
