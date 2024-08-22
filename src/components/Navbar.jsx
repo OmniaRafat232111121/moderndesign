@@ -25,8 +25,12 @@ let strings = new LocalizedStrings({
     contact: "Contact",
     button: "Contact Us",
     partners: "Partners",
+    modernDesign: "Modern Design", // Added English text
   },
-  ar: ar,
+  ar: {
+    ...ar,
+    modernDesign: "التصميم الحديث", // Added Arabic text
+  },
 });
 
 const Navbar = ({ language, toggleLanguage }) => {
@@ -67,16 +71,18 @@ const Navbar = ({ language, toggleLanguage }) => {
 
   return (
     <nav
-      className={`bg-primary border-b border-gray-200 ${
-        language === 'ar' ? 'rtl' : 'ltr'
-      }`}
+      dir={language === 'ar' ? 'rtl' : 'ltr'}
+      className={`bg-primary border-b border-gray-200`}
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex justify-between h-[100px] items-center`}>
           
-          {/* Logo Section */}
-          <div className={`flex items-center ${language === 'ar' ? 'order-2' : 'order-1'}`}>
-            <img src={logo} alt="Logo" className="h-[50px] sm:h-[80px]" />
+          {/* Logo and Modern Design Text Section */}
+          <div className={`flex items-center ${language === 'ar' ? 'order-2 ml-auto' : 'order-1 mr-auto'}`}>
+            <img src={logo} alt="Logo" className={`h-[50px] sm:h-[130px] ${language === 'ar' ? 'ml-4' : 'mr-4'}`} />
+            <span className={`text-heading cursor-pointer font-semibold  hover:text-white  ${language === 'en' ? 'font-en' : 'font-ar'}`}>
+              {strings.modernDesign}
+            </span>
           </div>
 
           {/* Hamburger Icon - Visible on md (768px) and lg (1024px) screens */}
@@ -106,7 +112,7 @@ const Navbar = ({ language, toggleLanguage }) => {
 </div>
           {/* Navigation + Contact + Language Section for larger screens */}
           <div className={`hidden xl:flex items-center space-x-4 
-            ${language === 'ar' ? 'order-1 flex-row-reverse' : 'order-2'}`}>
+            ${language === 'ar' ? 'order-1 flex-row-reverse ml-auto' : 'order-2 mr-auto'}`}>
             {renderMenuItems()}
             {/* Social Media Icons */}
             <div className="flex space-x-4">

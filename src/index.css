@@ -5,6 +5,27 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  border: none; /* Remove any border */
+  margin: 0; /* Ensure there's no margin around the nav */
+  padding: 0; /* Ensure there's no padding around the nav */
+  background-color: #004d4d; /* Match this color to your design */
+}
+
+.container {
+  margin: 0; /* Remove container margins if any */
+  padding: 0; /* Remove container padding if any */
+  border: none; /* Remove container border if any */
+}
+
+.mx-auto {
+  margin: 0 auto; /* Ensure the container is centered without extra margin */
+}
+
 
 
 body {

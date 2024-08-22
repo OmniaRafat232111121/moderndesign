@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import heroImage1 from '../assets/logo/image-76.jpg';
-import heroImage2 from '../assets/logo/image-75.jpg';
-import heroImage3 from '../assets/logo/image-74.jpg';
+import { TypeAnimation } from 'react-type-animation'; // Import the TypeAnimation component
+import v1 from '../assets/about/viedo.mp4'; // Import the video
 
 const HeroSection = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.2, // Animation triggers when 20% of the component is in view
   });
+  const [isPlaying, setIsPlaying] = useState(false);
 
   React.useEffect(() => {
     if (inView) {
@@ -19,9 +19,17 @@ const HeroSection = () => {
     }
   }, [controls, inView]);
 
+  const handlePlay = () => {
+    setIsPlaying(true);
+  };
+
+  const handlePause = () => {
+    setIsPlaying(false);
+  };
+
   const variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1.5 } },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1.5 } },
   };
 
   return (
@@ -29,53 +37,30 @@ const HeroSection = () => {
       ref={ref}
       className="relative h-screen bg-primary flex items-center justify-center overflow-hidden"
     >
-      {/* Background Animation */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r bg-primary"
+      {/* Video Background */}
+      <motion.video
+        className="absolute inset-0 w-full h-full object-cover"
         initial="hidden"
         animate={controls}
         variants={variants}
-      />
+        autoPlay
+        loop
+        playsInline
+        controls
+        onPlay={handlePlay}   // Track when the video starts playing
+        onPause={handlePause} // Track when the video is paused
+      >
+        <source src={v1} type="video/mp4" />
+        Your browser does not support the video tag.
+      </motion.video>
 
-      {/* Image Group Animation */}
-      <div className="relative z-10 flex space-x-4">
-        <motion.img
-          src={heroImage1}
-          alt="Hero 1"
-          className="w-1/3 max-w-xs object-cover rounded-lg"
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          whileHover={{ scale: 1.1, rotate: 2 }}
-        />
-        <motion.img
-          src={heroImage2}
-          alt="Hero 2"
-          className="w-1/3 max-w-xs object-cover rounded-lg"
-          initial="hidden"
-          animate={controls}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0, transition: { duration: 1.5, delay: 0.3 } },
-          }}
-          whileHover={{ scale: 1.1, rotate: -2 }}
-        />
-        <motion.img
-          src={heroImage3}
-          alt="Hero 3"
-          className="w-1/3 max-w-xs object-cover rounded-lg"
-          initial="hidden"
-          animate={controls}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0, transition: { duration: 1.5, delay: 0.6 } },
-          }}
-          whileHover={{ scale: 1.1, rotate: 2 }}
-        />
-      </div>
+      {/* Overlay (only visible when video is playing) */}
+      {isPlaying && (
+        <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+      )}
 
-      {/* Text Content */}
-      <div className="absolute bottom-10 text-center text-white">
+      {/* Optional Additional Content on Top of Overlay */}
+      <div className="relative z-20 text-center text-white">
         <motion.h1
           className="text-5xl font-bold mb-4"
           initial="hidden"
@@ -85,18 +70,33 @@ const HeroSection = () => {
             visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 1 } },
           }}
         >
-          Welcome to Our Website
+          <TypeAnimation
+            sequence={[
+              'Welcome to', // Types 'Welcome to'
+              1000, // Waits 1s
+              'Welcome to Modern Design Advertising Company', // Types 'Welcome to Modern Design Advertising Company'
+              2000, // Waits 2s
+              '', // Erase the whole text
+              1000, // Wait 1s before restarting
+            ]}
+            wrapper="span"
+            cursor={true}
+            repeat={Infinity} // Repeat indefinitely
+            style={{ display: 'inline-block' }}
+          />
         </motion.h1>
+
+
         <motion.p
-          className="text-lg"
+          className="text-xl mt-4 text-white"
           initial="hidden"
           animate={controls}
           variants={{
             hidden: { opacity: 0, x: 100 },
-            visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 1.5 } },
+            visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 2 } },
           }}
         >
-          We create beautiful web experiences.
+          We specialize in creating exceptional and unforgettable events with a focus on modern design and innovative strategies.
         </motion.p>
       </div>
     </section>

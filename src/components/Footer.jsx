@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../assets/logo/Logotextwhite.png";
+import logo from "../assets/logo/Logo.png";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import p1 from "../assets/projects/Gamers/image-68.jpg";
 import p2 from "../assets/projects/BOOTHS/image-84.jpg";
@@ -8,33 +8,39 @@ import p4 from "../assets/projects/cienma/image-10.jpg";
 import p5 from "../assets/projects/ignight/image-77.jpg";
 import p6 from "../assets/projects/Culture/image-16.jpg";
 
-const Footer = () => {
+const Footer = ({ language }) => {
   return (
-    <footer className="background_footer text-yellow-400 p-10 cursor-pointer">
+    <footer className={`background_footer text-yellow-400 p-10 cursor-pointer ${language === 'ar' ? 'font-ar' : 'font-en'}`}>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}
-        <div className="flex flex-col  ">
+        <div className="flex flex-col">
           <img src={logo} alt="Lead Logo" className="mb-4 w-[50%]" />
-          <p className="text-white mb-4 flex text-left ">
-            Modern Design Company, a premier production company specializing in creating exceptional and unforgettable events.
+          <p className="text-white mb-4 flex text-left">
+            {language === 'ar'
+              ? 'شركة التصميم الحديث، شركة إنتاج رائدة متخصصة في إنشاء أحداث استثنائية ولا تُنسى.'
+              : 'Modern Design Company, a premier production company specializing in creating exceptional and unforgettable events.'}
           </p>
         </div>
+
+        {/* Main Menu */}
         <div>
-          <h4 className="font-bold text-lg mb-4">Main Menu</h4>
+          <h4 className="font-bold text-lg mb-4">{language === 'ar' ? 'القائمة الرئيسية' : 'Main Menu'}</h4>
           <ul className="text-white space-y-2">
-            <li><a href="#home" className="hover:underline">Home</a></li>
-            <li><a href="#about" className="hover:underline">About</a></li>
-            <li><a href="#projects" className="hover:underline">Projects</a></li>
-            <li><a href="#partners" className="hover:underline">Partners</a></li>
-            <li><a href="#blog" className="hover:underline">Blog</a></li>
+            <li><a href="#home" className="hover:underline">{language === 'ar' ? 'الصفحة الرئيسية' : 'Home'}</a></li>
+            <li><a href="#about" className="hover:underline">{language === 'ar' ? 'من نحن' : 'About'}</a></li>
+            <li><a href="#projects" className="hover:underline">{language === 'ar' ? 'المشاريع' : 'Projects'}</a></li>
+            <li><a href="#partners" className="hover:underline">{language === 'ar' ? 'الشركاء' : 'Partners'}</a></li>
+            <li><a href="#blog" className="hover:underline">{language === 'ar' ? 'المدونة' : 'Blog'}</a></li>
           </ul>
         </div>
+
+        {/* Contacts */}
         <div>
-          <h4 className="font-bold text-lg mb-4 flex items-start">Contacts</h4>
+          <h4 className="font-bold text-lg mb-4">{language === 'ar' ? 'جهات الاتصال' : 'Contacts'}</h4>
           <ul className="text-white space-y-2">
             <li className="flex items-center"><FaPhoneAlt className="mr-2" /> +966 557480817</li>
             <li className="flex items-center"><FaEnvelope className="mr-2" /> Moderndesign20202@gmail.com</li>
-            <li className="flex items-center"><FaMapMarkerAlt className="mr-2" /> Saudi Arabia, Riyadh</li>
+            <li className="flex items-center"><FaMapMarkerAlt className="mr-2" /> {language === 'ar' ? 'المملكة العربية السعودية، الرياض' : 'Saudi Arabia, Riyadh'}</li>
           </ul>
           <div className="flex mt-4 space-x-4">
             <a href="https://facebook.com" className="text-white hover:text-yellow-500"><FaFacebookF /></a>
@@ -46,8 +52,9 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Projects */}
         <div>
-          <h4 className="font-bold text-lg mb-4 flex items-start">Projects</h4>
+          <h4 className="font-bold text-lg mb-4">{language === 'ar' ? 'المشاريع' : 'Projects'}</h4>
           <div className="grid grid-cols-3 gap-8">
             <div className="flex flex-col items-center space-y-4">
               <img src={p1} alt="Project 1" className="w-32 h-16 object-cover border-2 border-white" />
@@ -66,7 +73,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-white mt-8 pt-4 text-center text-white">
-        <p>All Rights Reserved &copy; 2024 Developed By OmniaRafat</p>
+        <p>{language === 'ar' ? 'جميع الحقوق محفوظة &copy; 2024 تم التطوير بواسطة أمنية رفعت' : 'All Rights Reserved &copy; 2024 Developed By OmniaRafat'}</p>
       </div>
     </footer>
   );
