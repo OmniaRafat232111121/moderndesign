@@ -62,44 +62,44 @@ const Projects = ({ language }) => {  // Accept language as a prop
 
   return (
     <motion.div
-  id="projects"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1 }}
-  className={`bg-primary py-10 ${language === 'ar' ? 'font-ar' : 'font-en'}`}
->
-  <div className="container mx-auto px-6 md:px-12">
-    <Title text={language === 'ar' ? ar.projectsTitle : "Projects"} />
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-      {projectList.map((project, index) => (
-        <div
-          key={index}
-          className="relative group cursor-pointer overflow-hidden rounded-lg"
-        >
-          <div className="absolute inset-0 border-2 border-transparent group-hover:border-heading transition-all duration-500 ease-in-out rounded-lg"></div>
-          <div className="absolute inset-0 border-2 border-transparent group-hover:border-heading transition-all duration-500 ease-in-out rounded-lg animate-border"></div>
-          <motion.img
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.3 }}
-            src={project.image}
-            alt={project.title}
-            loading="lazy"
-            className="w-full h-60 object-cover rounded-lg"
-          />
-          <motion.h3
-            className="absolute inset-0 flex items-center justify-center text-lg md:text-md text-white
-                     bg-primary bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            {capitalizeTitle(language === 'ar' ? project.titleAr : project.title)}
-          </motion.h3>
-        </div>
-      ))}
+    id="projects"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+    className={` bg-primary py-10 ${language === 'ar' ? 'font-ar' : 'font-en'}`} // Removed background color
+  >
+    <div className="container mx-auto px-6 md:px-12">
+      <Title text={language === 'ar' ? ar.projectsTitle : "Projects"} />  {/* Title based on language */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+        {projectList.map((project, index) => (
+      <div
+      key={index}
+      className="relative group cursor-pointer overflow-hidden rounded-lg"
+    >
+      <div className="absolute inset-0 border-2 border-transparent group-hover:border-heading transition-all duration-500 ease-in-out rounded-lg"></div>
+      <div className="absolute inset-0 border-2 border-transparent group-hover:border-heading transition-all duration-500 ease-in-out rounded-lg animate-border"></div>
+      <motion.img
+        whileHover={{ scale: 1.1 }}
+        transition={{ duration: 0.3 }}
+        src={project.image}
+        alt={project.title}
+        loading="lazy"
+        className="w-full h-60 object-cover rounded-lg"
+      />
+      <motion.h3
+        className="absolute inset-0 flex items-center justify-center text-lg md:text-md text-white
+                 bg-primary bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+        whileHover={{ scale: 1.1 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+      >
+        {capitalizeTitle(language === 'ar' ? project.titleAr : project.title)}
+      </motion.h3>
     </div>
-  </div>
-</motion.div>
-
+    
+        ))}
+      </div>
+    </div>
+  </motion.div>
   
   );
 };

@@ -24,7 +24,7 @@ const About = ({ language }) => {
   return (
     <motion.div
       ref={ref}
-      id="about"
+      // id="about"
       initial="hidden"
       animate={controls}
       variants={{

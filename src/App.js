@@ -14,6 +14,9 @@ import Cover from './components/Cover';
 import GoogleMapEmbed from './components/GoogleMapEmbed';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Partners_Page from './components/Partners_Page';
+import Layout from './components/Layout';
 
 function App() {
   const [language, setLanguage] = useState('en');
@@ -33,18 +36,29 @@ function App() {
   };
 
   return (
-    <div className={`App bg-primary  ${language === 'ar' ? 'rtl' : 'ltr'}`}>
-      <Navbar language={language} toggleLanguage={toggleLanguage} />
-      <HeroSection language={language} />
-      <About language={language} data-aos="fade-up"/> {/* Add AOS animation */}
-      <Projects language={language} data-aos="fade-up" /> {/* Add AOS animation */}
-      <Gallery language={language} data-aos="fade-up" /> {/* Add AOS animation */}
-      <Aims language={language} data-aos="fade-up" /> {/* Add AOS animation */}
-      <Cover data-aos="fade-up" /> {/* Add AOS animation */}
-      <Partners language={language} data-aos="fade-up" /> {/* Add AOS animation */}
-      <GoogleMapEmbed data-aos="fade-up"/> {/* Add AOS animation */}
-      <Footer language={language} data-aos="fade-up" /> {/* Add AOS animation */}
-    </div>
+    <Router>
+    <Layout language={language} toggleLanguage={toggleLanguage}>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <HeroSection language={language} />
+            <About language={language} data-aos="fade-up" />
+            <Projects language={language} data-aos="fade-up" />
+            <Gallery language={language} data-aos="fade-up" />
+            <Aims language={language} data-aos="fade-up" />
+            <Cover data-aos="fade-up" />
+             <Partners language={language} data-aos="fade-up" />
+          </>
+        } />
+        <Route path="/about" element={<About language={language} data-aos="fade-up" />} />
+        <Route path="/projects" element={<Projects language={language} data-aos="fade-up" />} />
+        <Route path="/gallery" element={<Gallery language={language} data-aos="fade-up" />} />
+        <Route path="/aims" element={<Aims language={language} data-aos="fade-up" />} />
+        <Route path="/cover" element={<Cover data-aos="fade-up" />} />
+        <Route path="/partners" element={<Partners_Page language={language} data-aos="fade-up" />} />
+      </Routes>
+    </Layout>
+  </Router>
   );
 }
 

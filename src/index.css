@@ -8,7 +8,9 @@
 body, html {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
+
 nav {
   border: none; /* Remove any border */
   margin: 0; /* Ensure there's no margin around the nav */

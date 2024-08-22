@@ -50,9 +50,30 @@ const Footer = ({ language }) => {
               <span>Moderndesign20202@gmail.com</span>
             </li>
             <li className="flex justify-center md:justify-start items-center">
-              <FaMapMarkerAlt className={`mr-2 ${language === 'ar' ? 'ml-2' : 'mr-2'}`} />
-              <span>{language === 'ar' ? 'المملكة العربية السعودية، الرياض' : 'Saudi Arabia, Riyadh'}</span>
-            </li>
+  <FaMapMarkerAlt className={`mr-2 ${language === 'ar' ? 'ml-2' : 'mr-2'}`} />
+  <a
+    href="https://www.google.com/maps/place/%D8%B4%D8%B1%D9%83%D8%A9+%D8%A7%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB+%D9%84%D9%84%D8%AF%D8%B9%D8%A7%D9%8A%D8%A9+%D9%88%D8%A7%D9%84%D8%A7%D8%B9%D9%84%D8%A7%D9%86,+Prince+Muhammad+Ibn+Abd+Al+Rahman,+Ghubairah,+Riyadh+12665%E2%80%AD/data=!4m2!3m1!1s0x3e2f05369a8b6a57:0x22372fb6753a8f7f?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESCjExLjE0MS4xMDMYACDXggMqqwEsOTQyMzA1MTEsOTQyMDMzMjQsNDcwNzU0ODksOTQyMTY0MjYsOTQyMTY0MTMsOTQyMjMyOTksOTQyMTY0MTMsOTQyMTI0OTYsOTQyMTI2NjUsOTQyMDczOTQsOTQyMDc1MDYsOTQyMDg1MDYsOTQyMTc1MjMsOTQyMTg2NTMsOTQyMjk4MzksOTQyMzExODAsNDcwODcxMTgsNDcwODQzOTMsOTQyMTMyMDBCAlNB"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:underline"
+  >
+    {language === 'ar' ? 'الخالدية، الرياض، السعودية' : 'Al-Khalidiya, Riyadh, Saudi Arabia'}
+    </a>
+</li>
+
+<li className="flex justify-center md:justify-start items-center">
+  <FaMapMarkerAlt className={`mr-2 ${language === 'ar' ? 'ml-2' : 'mr-2'}`} />
+  <a
+    href="https://www.google.com/maps/place/%D8%B4%D8%B1%D9%83%D8%A9+%D8%A7%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB+%D9%84%D9%84%D8%AF%D8%B9%D8%A7%D9%8A%D8%A9+%D9%88+%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D8%8C+%D8%B7%D8%B1%D9%8A%D9%82+%D8%A7%D9%84%D8%A7%D9%85%D9%8A%D8%B1+%D9%85%D8%AD%D9%85%D8%AF+%D8%A8%D9%86+%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%AD%D9%85%D9%86%D8%8C+%D8%A7%D9%84%D8%AE%D8%A7%D9%84%D8%AF%D9%8A%D8%A9%D8%8C+%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6+12875%E2%80%AD/data=!4m2!3m1!1s0x3e2f05379bb626b7:0xe0e962ce762845d5?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESCjExLjE0MC4xMDQYACDXggMqbCw5NDIyMzI5OSw5NDIxNjQxMyw5NDIxMjQ5Niw5NDIwNzM5NCw5NDIwNzUwNiw5NDIwODUwNiw5NDIxNzUyMyw5NDIxODY1Myw5NDIyOTgzOSw0NzA4NzExOCw0NzA4NDM5Myw5NDIxMzIwMEICU0E%3D"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:underline"
+  >
+    {language === 'ar' ? 'غوبيرا، الرياض، السعودية' : 'Ghubairah, Riyadh, Saudi Arabia'}
+
+  </a>
+</li>
+
           </ul>
           <div className="flex justify-center md:justify-start mt-4 space-x-4">
             <a href="https://facebook.com" className="text-white hover:text-yellow-500"><FaFacebookF /></a>
