@@ -21,7 +21,7 @@ const Cover = () => {
   return (
     <motion.div
       ref={ref}
-      className="h-screen w-full overflow-hidden"
+      className="h-screen w-full overflow-hidden flex justify-center items-center"
       initial="hidden"
       animate={controls}
       variants={{
@@ -32,7 +32,7 @@ const Cover = () => {
       <img 
         src={coverImage} 
         alt="Cover" 
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover md:h-auto md:w-auto"
       />
     </motion.div>
   );
