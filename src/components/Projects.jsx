@@ -66,7 +66,7 @@ const Projects = ({ language }) => {  // Accept language as a prop
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className={`bg-primary text-white py-10 ${language === 'ar' ? 'font-ar' : 'font-en'}`}
+      className={`py-10 ${language === 'ar' ? 'font-ar' : 'font-en'}`} // Removed background color
     >
       <div className="container mx-auto px-6 md:px-12">
         <Title text={language === 'ar' ? ar.projectsTitle : "Projects"} />  {/* Title based on language */}
@@ -74,7 +74,7 @@ const Projects = ({ language }) => {  // Accept language as a prop
           {projectList.map((project, index) => (
             <div
               key={index}
-              className={`p-6 rounded-lg shadow-md bg-secondary border-2 border-transparent border-heading   ${language === 'ar' ? 'font-ar' : 'font-en'}`}
+              className="relative group cursor-pointer overflow-hidden rounded-lg" // Added overflow-hidden to contain the overlay
             >
               <motion.img
                 whileHover={{ scale: 1.1 }}
@@ -82,17 +82,16 @@ const Projects = ({ language }) => {  // Accept language as a prop
                 src={project.image}
                 alt={project.title}
                 loading="lazy"
-                className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
+                className="w-full h-60 object-cover"
               />
-             <motion.h3
-  className="text-lg md:text-md mb-2 cursor-pointer"
-  whileHover={{ scale: 1.1, color: "#FFD700" }} // Scale and color change on hover
-  transition={{ duration: 0.3, ease: "easeInOut" }} // Smooth transition
->
-  {capitalizeTitle(language === 'ar' ? project.titleAr : project.title)}
-</motion.h3>
-
-              <p>{project.description}</p>
+              <motion.h3
+                className="absolute inset-0 flex items-center justify-center text-lg md:text-md text-white
+                 bg-primary bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                {capitalizeTitle(language === 'ar' ? project.titleAr : project.title)}
+              </motion.h3>
             </div>
           ))}
         </div>
