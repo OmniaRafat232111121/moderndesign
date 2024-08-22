@@ -17,6 +17,7 @@ import 'aos/dist/aos.css'; // Import AOS styles
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Partners_Page from './components/Partners_Page';
 import Layout from './components/Layout';
+import ContactUs from './components/ContactUs';
 
 function App() {
   const [language, setLanguage] = useState('en');
@@ -55,6 +56,8 @@ function App() {
         <Route path="/gallery" element={<Gallery language={language} data-aos="fade-up" />} />
         <Route path="/aims" element={<Aims language={language} data-aos="fade-up" />} />
         <Route path="/cover" element={<Cover data-aos="fade-up" />} />
+        <Route path="/contact" element={<ContactUs data-aos="fade-up" />} />
+
         <Route path="/partners" element={<Partners_Page language={language} data-aos="fade-up" />} />
       </Routes>
     </Layout>
