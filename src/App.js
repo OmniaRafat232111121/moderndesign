@@ -10,6 +10,7 @@ import Partners from './components/Partners';
 import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 import Aims from './components/Aims';
+import Cover from './components/Cover';
 
 function App() {
   const [language, setLanguage] = useState('en');
@@ -26,6 +27,7 @@ function App() {
       <Projects language={language} />
       <Gallery language={language} />
       <Aims language={language} />
+      <Cover/>
       <Partners language={language} />
       <Footer language={language} />
     </div>

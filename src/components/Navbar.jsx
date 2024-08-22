@@ -26,7 +26,7 @@ const Navbar = ({ language, toggleLanguage }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <div className="flex items-center">
-            <img src={logo} alt="Logo" className={`h-[50px] sm:h-[150px] ${language === 'ar' ? 'ml-4' : 'mr-4'}`} />
+            <img src={logo} alt="Logo" className={`h-[50px] sm:h-[150px] p-4 rounded-md  ${language === 'ar' ? 'ml-4' : 'mr-4'}`} />
           </div>
           
           <div className="hidden md:flex items-center space-x-6">
@@ -34,9 +34,9 @@ const Navbar = ({ language, toggleLanguage }) => {
               {menuItems.map((item) => (
                 <Link
                 key={item.href}
-                to={item.href}  // This connects the menu item to the section with the corresponding id
-                smooth={true}  // Enables smooth scrolling
-                duration={500}  // Scroll duration in milliseconds
+                to={item.href}  
+                smooth={true} 
+                duration={500}
                 className=" hover:text-heading px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 border border-transparent hover:border-heading"
 
               >
