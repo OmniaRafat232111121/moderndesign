@@ -44,7 +44,7 @@ const About = ({ language }) => {
             <img
               src={aboutImage}
               alt="About Us"
-              className="w-full md:w-3/4 lg:w-2/3 border-4 border-white rounded-lg"
+              className="w-full md:w-3/4 lg:w-2/3 border-4 border-white hover:border-heading rounded-lg"
             />
           </motion.div>
 

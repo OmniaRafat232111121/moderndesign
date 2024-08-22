@@ -44,7 +44,10 @@ const Partners = () => {
   };
 
   return (
-    <div className="relative p-8 bg-primary" id="partners">
+    <div 
+    id="partners"
+    className="relative p-8 bg-primary" 
+    >
       <Title text="Partners"/>
       <Slider ref={sliderRef} {...settings} >
         {Object.values(images).map((img, index) => (

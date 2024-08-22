@@ -62,7 +62,7 @@ const Projects = ({ language }) => {  // Accept language as a prop
 
   return (
     <motion.div
-      id="portfolio"
+      id="projects"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -74,7 +74,7 @@ const Projects = ({ language }) => {  // Accept language as a prop
           {projectList.map((project, index) => (
             <div
               key={index}
-              className={`p-6 rounded-lg shadow-md bg-secondary  ${language === 'ar' ? 'font-ar' : 'font-en'}`}
+              className={`p-6 rounded-lg shadow-md bg-secondary border-2 border-transparent border-heading   ${language === 'ar' ? 'font-ar' : 'font-en'}`}
             >
               <motion.img
                 whileHover={{ scale: 1.1 }}
@@ -84,9 +84,14 @@ const Projects = ({ language }) => {  // Accept language as a prop
                 loading="lazy"
                 className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer"
               />
-              <h3 className="text-lg md:text-md  mb-2">
-                {capitalizeTitle(language === 'ar' ? project.titleAr : project.title)}
-              </h3>
+             <motion.h3
+  className="text-lg md:text-md mb-2 cursor-pointer"
+  whileHover={{ scale: 1.1, color: "#FFD700" }} // Scale and color change on hover
+  transition={{ duration: 0.3, ease: "easeInOut" }} // Smooth transition
+>
+  {capitalizeTitle(language === 'ar' ? project.titleAr : project.title)}
+</motion.h3>
+
               <p>{project.description}</p>
             </div>
           ))}
