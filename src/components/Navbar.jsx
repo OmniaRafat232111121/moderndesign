@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaGlobeAmericas, FaGlobe, FaLinkedin, FaFacebook, FaTwitter, FaPinterest, FaTiktok } from 'react-icons/fa';
 import { Link as ScrollLink } from 'react-scroll';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link, Link as RouterLink, useLocation } from 'react-router-dom';
 import logo from "../assets/logo/english_logo.png";
 
 const Navbar = ({ language, toggleLanguage }) => {
@@ -20,12 +20,17 @@ const Navbar = ({ language, toggleLanguage }) => {
   ];
 
   return (
-    <nav className={`bg-primary text-white ${language === 'ar' ? 'font-ar' : 'font-en'}`}>
+    <nav className="bg-gradient-to-r from-black  text-white to-transparent bg-cover bg-center py-4 ">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-24">
           <div className="flex items-center">
-            <img src={logo} alt="Logo" className={`h-[80px] p-4 rounded-md ${language === 'ar' ? 'ml-4' : 'mr-4'}`} />
-          </div>
+          <Link to="/">
+    <img 
+      src={logo} 
+      alt="Logo" 
+      className={`h-[80px] p-4 rounded-md ${language === 'ar' ? 'ml-4' : 'mr-4'}`} 
+    />
+  </Link>          </div>
 
           <div className="hidden md:flex items-center space-x-6">
             <div className={`flex items-baseline space-x-4 ${language === 'ar' ? 'space-x-reverse ml-3' : ''}`}>
