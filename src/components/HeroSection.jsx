@@ -20,7 +20,7 @@ const HeroSection = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (inView) {
       controls.start('visible');
     } else {
@@ -44,7 +44,7 @@ const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative h-screen bg-primary flex items-center justify-center overflow-hidden"
+      className="relative h-[80vh] bg-primary flex items-center justify-center overflow-hidden"
     >
       {/* Video Background */}
       <motion.video
@@ -54,8 +54,8 @@ const HeroSection = () => {
         variants={variants}
         autoPlay
         loop
+        muted
         playsInline
-        controls
         onPlay={handlePlay}  
         onPause={handlePause} 
       >
