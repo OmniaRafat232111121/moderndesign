@@ -67,23 +67,49 @@ const Navbar = ({ language, toggleLanguage }) => {
             </div>
 
             <div className={`flex space-x-4 ${language === 'ar' ? 'space-x-reverse' : ''}`}>
-              {/* Social Media Links */}
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-heading">
-                <FaLinkedin size={20} />
-              </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-heading">
-                <FaFacebook size={20} />
-              </a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-heading">
-                <FaTwitter size={20} />
-              </a>
-              <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" className="hover:text-heading">
-                <FaPinterest size={20} />
-              </a>
-              <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className="hover:text-heading">
-                <FaTiktok size={20} />
-              </a>
-            </div>
+  {/* Social Media Links */}
+  <a
+    href="https://www.linkedin.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-white p-2 rounded-full border border-gray-300 hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-110"
+  >
+    <FaLinkedin size={20} className="text-blue-600 hover:text-white" />
+  </a>
+  <a
+    href="https://www.facebook.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-white p-2 rounded-full border border-gray-300 hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-110"
+  >
+    <FaFacebook size={20} className="text-blue-700 hover:text-white" />
+  </a>
+  <a
+    href="https://www.twitter.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-white p-2 rounded-full border border-gray-300 hover:bg-blue-400 transition duration-300 ease-in-out transform hover:scale-110"
+  >
+    <FaTwitter size={20} className="text-blue-400 hover:text-white" />
+  </a>
+  <a
+    href="https://www.pinterest.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-white p-2 rounded-full border border-gray-300 hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-110"
+  >
+    <FaPinterest size={20} className="text-red-600 hover:text-white" />
+  </a>
+  <a
+    href="https://www.tiktok.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-white p-2 rounded-full border border-gray-300 hover:bg-pink-500 transition duration-300 ease-in-out transform hover:scale-110"
+  >
+    <FaTiktok size={20} className="text-pink-500 hover:text-white" />
+  </a>
+</div>
+
 
             <button
               onClick={toggleLanguage}

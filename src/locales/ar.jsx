@@ -35,6 +35,16 @@ export const ar = {
     project23: "مشروع مسك",
     project24: "معرض الشاي",
     galleryTitle: "معرض الصور",
+    
 
-
+    contact_info: "معلومات الاتصال",
+    first_name: "الاسم الأول",
+    last_name: "الكنية",
+    email_address: "عنوان البريد الإلكتروني",
+    mobile_number: "رقم الجوال",
+    write_your_message: "اكتب رسالتك هنا",
+    send: "إرسال",
+    saudi_arabia: "المملكة العربية السعودية",
+    contact_us: "اتصل بنا",
+    modern_design_advertising: "التصميم الحديث للإعلان"
 };

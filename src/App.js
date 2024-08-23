@@ -56,7 +56,7 @@ function App() {
         <Route path="/gallery" element={<Gallery language={language} data-aos="fade-up" />} />
         <Route path="/aims" element={<Aims language={language} data-aos="fade-up" />} />
         <Route path="/cover" element={<Cover data-aos="fade-up" />} />
-        <Route path="/contact" element={<ContactUs data-aos="fade-up" />} />
+        <Route path="/contact" element={<ContactUs  language={language} data-aos="fade-up" />} />
 
         <Route path="/partners" element={<Partners_Page language={language} data-aos="fade-up" />} />
       </Routes>

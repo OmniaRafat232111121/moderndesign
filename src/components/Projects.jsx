@@ -8,18 +8,16 @@ import img5 from '../assets/projects/RIYADH/image-43.jpg';
 import img6 from '../assets/projects/uni/image-50.jpg';
 import img7 from '../assets/projects/DAKAR/image-54.jpg';
 import img8 from '../assets/projects/Tour/image-56.jpg';
-import img9 from '../assets/projects/uni/image-50.jpg';
 import img10 from '../assets/projects/Book Fair/main.jpg';
 import img11 from '../assets/projects/tourism/main.jpg';
 import img12 from '../assets/projects/Fairgrounds/main.jpg';
 import img13 from '../assets/projects/National Day/main.jpg';
 import img14 from '../assets/projects/Alfas project/main.jpg';
 import img15 from '../assets/projects/space/main.jpg';
-import img16 from '../assets/projects/Almarai Project/main.jpg'
-import img17 from '../assets/projects/Founding Day/main.jpg'
-
-import img18 from '../assets/projects/Saudi Federation/main.jpg'
-import img19 from '../assets/projects/LEAP Project/main.jpg'
+import img16 from '../assets/projects/Almarai Project/main.jpg';
+import img17 from '../assets/projects/Founding Day/main.jpg';
+import img18 from '../assets/projects/Saudi Federation/main.jpg';
+import img19 from '../assets/projects/LEAP Project/main.jpg';
 import img21 from '../assets/projects/King Solomon Protectorate/main.jpg';
 import img22 from '../assets/projects/Diriyah camps/main.jpg';
 import img23 from '../assets/projects/Misk project/main.jpg';
@@ -27,6 +25,7 @@ import img24 from '../assets/projects/tea fair/main.jpg';
 import { ar } from '../locales/ar'; // Importing Arabic translations
 
 import Title from './Title';
+
 const capitalizeTitle = (title) => {
   return title
     .split(' ')
@@ -60,47 +59,63 @@ const Projects = ({ language }) => {  // Accept language as a prop
     { id: 'project24', title: 'tea fair', titleAr: ar.project24, image: img24},
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Delay between each child animation
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <motion.div
-    id="projects"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 1 }}
-    className={` bg-primary py-10 ${language === 'ar' ? 'font-ar' : 'font-en'}`} // Removed background color
-  >
-    <div className="container mx-auto px-6 md:px-12">
-      <Title text={language === 'ar' ? ar.projectsTitle : "Projects"} />  {/* Title based on language */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-        {projectList.map((project, index) => (
-      <div
-      key={index}
-      className="relative group cursor-pointer overflow-hidden rounded-lg"
+      id="projects"
+      initial="hidden"
+      animate="show"
+      variants={containerVariants}
+      className={`bg-primary py-10 ${language === 'ar' ? 'font-ar' : 'font-en'}`}
     >
-      <div className="absolute inset-0 border-2 border-transparent group-hover:border-heading transition-all duration-500 ease-in-out rounded-lg"></div>
-      <div className="absolute inset-0 border-2 border-transparent group-hover:border-heading transition-all duration-500 ease-in-out rounded-lg animate-border"></div>
-      <motion.img
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.3 }}
-        src={project.image}
-        alt={project.title}
-        loading="lazy"
-        className="w-full h-60 object-cover rounded-lg"
-      />
-      <motion.h3
-        className="absolute inset-0 flex items-center justify-center text-lg md:text-md text-white
-                 bg-primary bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-      >
-        {capitalizeTitle(language === 'ar' ? project.titleAr : project.title)}
-      </motion.h3>
-    </div>
-    
-        ))}
+      <div className="container mx-auto px-6 md:px-12">
+        <Title text={language === 'ar' ? ar.projectsTitle : "Projects"} />  {/* Title based on language */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6"
+        >
+          {projectList.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="relative group cursor-pointer overflow-hidden rounded-lg"
+            >
+              <div className="absolute inset-0 border-[3px] border-transparent group-hover:border-heading transition-all duration-500 ease-in-out rounded-lg"></div>
+              <div className="absolute inset-0 border-[3px] border-transparent group-hover:border-heading transition-all duration-500 ease-in-out rounded-lg animate-border"></div>
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                className="w-full h-60 object-cover rounded-lg"
+              />
+              <motion.h3
+                className="absolute inset-0 flex items-center justify-center text-lg md:text-md text-white
+                  bg-primary bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                {capitalizeTitle(language === 'ar' ? project.titleAr : project.title)}
+              </motion.h3>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </div>
-  </motion.div>
-  
+    </motion.div>
   );
 };
 
