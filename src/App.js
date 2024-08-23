@@ -49,7 +49,7 @@ function App() {
             <Projects language={language} data-aos="fade-up" />
             <Gallery language={language} data-aos="fade-up" />
             <Aims language={language} data-aos="fade-up" />
-            <Cover data-aos="fade-up" />
+            {/* <Cover data-aos="fade-up" /> */}
              <Partners language={language} data-aos="fade-up" />
           </>
         } />

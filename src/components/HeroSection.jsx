@@ -44,7 +44,7 @@ const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative h-[80vh] bg-primary flex items-center justify-center overflow-hidden"
+      className="relative h-[70vh] bg-primary flex items-center justify-center overflow-hidden"
     >
       {/* Video Background */}
       <motion.video

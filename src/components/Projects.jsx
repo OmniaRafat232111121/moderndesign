@@ -114,10 +114,12 @@ const Projects = ({ language }) => {  // Accept language as a prop
               {capitalizeTitle(language === 'ar' ? project.titleAr : project.title)}
             </motion.h3>
             <Link to={`/projects/${project.id}/${project.title}`}>
-              <button className="absolute bottom-4 left-[110px] bg-yellow-500 text-white py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                {language === 'ar' ? 'عرض المزيد' : 'Show More'}
-              </button>
-            </Link>
+                <button className="absolute bottom-0 top-[80px] left-0 right-0 m-auto w-32 h-10 
+                 bg-yellow-500 text-white py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100
+                 transition-opacity duration-300 ease-in-out">
+                  {language === 'ar' ? 'عرض المزيد' : 'Show More'}
+                </button>
+              </Link>
           </motion.div>
         ))}
       </motion.div>
