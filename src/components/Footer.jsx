@@ -46,9 +46,15 @@ const Footer = ({ language }) => {
               <span>+966 55 366 6297</span>
             </li>
             <li className="flex justify-center md:justify-start items-center">
-              <FaEnvelope className={`mr-2 ${language === 'ar' ? 'ml-2' : 'mr-2'}`} />
-              <span>Moderndesign20202@gmail.com</span>
-            </li>
+  <FaEnvelope className={`mr-2 ${language === 'ar' ? 'ml-2' : 'mr-2'}`} />
+  <a
+    href="mailto:Moderndesign20202@gmail.com"
+    className="hover:underline"
+  >
+    Moderndesign20202@gmail.com
+  </a>
+</li>
+
             <li className="flex justify-center md:justify-start items-center">
   <FaMapMarkerAlt className={`mr-2 ${language === 'ar' ? 'ml-2' : 'mr-2'}`} />
   <a

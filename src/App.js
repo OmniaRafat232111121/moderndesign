@@ -18,6 +18,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Partners_Page from './components/Partners_Page';
 import Layout from './components/Layout';
 import ContactUs from './components/ContactUs';
+import Blog from './components/Blog';
+import ProjectDetails from './components/ProjectDetails';
 
 function App() {
   const [language, setLanguage] = useState('en');
@@ -52,11 +54,14 @@ function App() {
           </>
         } />
         <Route path="/about" element={<About language={language} data-aos="fade-up" />} />
+        <Route path="/blog" element={<Blog language={language} data-aos="fade-up" />} />
+
         <Route path="/projects" element={<Projects language={language} data-aos="fade-up" />} />
         <Route path="/gallery" element={<Gallery language={language} data-aos="fade-up" />} />
         <Route path="/aims" element={<Aims language={language} data-aos="fade-up" />} />
         <Route path="/cover" element={<Cover data-aos="fade-up" />} />
         <Route path="/contact" element={<ContactUs  language={language} data-aos="fade-up" />} />
+        <Route path="/projects/:id/:title" element={<ProjectDetails />} />
 
         <Route path="/partners" element={<Partners_Page language={language} data-aos="fade-up" />} />
       </Routes>

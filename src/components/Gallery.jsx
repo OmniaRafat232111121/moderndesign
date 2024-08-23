@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Icons for navigation
 import img1 from '../assets/projects/cienma/image-08.jpg';
 import img2 from '../assets/projects/Culture/image-23.jpg';
 import img3 from '../assets/projects/DIRIYAH BIENNIAL/image-29.jpg';
@@ -31,6 +32,7 @@ const Gallery = ({ language }) => {
 
   const [isModalOpen, setModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const sliderRef = useRef(null);
 
   const handleImageClick = (index) => {
     setCurrentImageIndex(index);
@@ -38,12 +40,16 @@ const Gallery = ({ language }) => {
   };
 
   const settings = {
-    dots: false, // Disable dots if you don't want them
+    dots: false,
     infinite: true,
-    speed: 500,
-    slidesToShow: 3, // Number of images to show at once
-    slidesToScroll: 1, // Number of images to scroll at once
-    arrows: false, // Disable previous and next buttons
+    speed: 3000, // Adjust the speed of the scroll (higher value for slower scroll)
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0, // Set to 0 for continuous scrolling
+    cssEase: 'linear', // Continuous smooth scrolling
+    arrows: false, // Disable navigation arrows if you want purely automatic scroll
+    pauseOnHover: false, // Continue scrolling even when hovering over the slider
     responsive: [
       {
         breakpoint: 1024,
@@ -65,28 +71,29 @@ const Gallery = ({ language }) => {
       <div className="container mx-auto px-6 md:px-12">
         <Title text={language === 'ar' ? ar.galleryTitle : 'Our Gallery'} />
 
-        <Slider {...settings} className="mt-8">
-          {galleryImages.map((image, index) => (
-            <motion.div
-              key={image.id}
-              className="px-3 relative group"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
-              whileHover={{ scale: 1.05 }}
-              onClick={() => handleImageClick(index)}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                loading="lazy"
-                className="h-[700px] w-full object-cover rounded-lg shadow-lg"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg"></div>
-            </motion.div>
-          ))}
-        </Slider>
+        <div className="relative">
+          <Slider ref={sliderRef} {...settings} className="mt-8">
+            {galleryImages.map((image, index) => (
+              <motion.div
+                key={image.id}
+                className="px-3 relative group"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
+                whileHover={{ scale: 1.05 }}
+                onClick={() => handleImageClick(index)}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  loading="lazy"
+                  className="h-[700px] w-full object-cover rounded-lg shadow-lg"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg"></div>
+              </motion.div>
+            ))}
+          </Slider>
+        </div>
 
         {/* Modal */}
         <ImageModal

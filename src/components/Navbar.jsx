@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes, FaGlobeAmericas, FaGlobe, FaLinkedin, FaFacebook, FaTwitter, FaPinterest, FaTiktok } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGlobeAmericas, FaGlobe, FaLinkedin, FaFacebook, FaTwitter, FaPinterest, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link, Link as RouterLink, useLocation } from 'react-router-dom';
 import logo from "../assets/logo/english_logo.png";
@@ -16,7 +16,9 @@ const Navbar = ({ language, toggleLanguage }) => {
     { name: language === 'en' ? 'Services' : 'خدماتنا', href: '/services' },
     { name: language === 'en' ? 'Projects' : 'مشروعتنا', href: '/projects' },
     { name: language === 'en' ? 'Partners' : 'شركائنا', href: '/partners' },
+    { name: language === 'en' ? 'Blog' : 'المدونة', href: '/blog' },
     { name: language === 'en' ? 'Contact' : 'اتصل بنا', href: '/contact' },
+
   ];
 
   return (
@@ -72,42 +74,41 @@ const Navbar = ({ language, toggleLanguage }) => {
     href="https://www.linkedin.com"
     target="_blank"
     rel="noopener noreferrer"
-    className="bg-white p-2 rounded-full border border-gray-300 hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-110"
   >
-    <FaLinkedin size={20} className="text-blue-600 hover:text-white" />
+    <FaLinkedin size={20} className="hover:text-heading" />
   </a>
   <a
     href="https://www.facebook.com"
     target="_blank"
     rel="noopener noreferrer"
-    className="bg-white p-2 rounded-full border border-gray-300 hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-110"
   >
-    <FaFacebook size={20} className="text-blue-700 hover:text-white" />
+    <FaFacebook size={20} className="hover:text-heading" />
   </a>
   <a
     href="https://www.twitter.com"
     target="_blank"
     rel="noopener noreferrer"
-    className="bg-white p-2 rounded-full border border-gray-300 hover:bg-blue-400 transition duration-300 ease-in-out transform hover:scale-110"
   >
-    <FaTwitter size={20} className="text-blue-400 hover:text-white" />
+    <FaTwitter size={20} className="hover:text-heading" />
   </a>
-  <a
-    href="https://www.pinterest.com"
+
+
+<a
+    href="https://www.tiktok.com/@yourUsername"
     target="_blank"
-    rel="noopener noreferrer"
-    className="bg-white p-2 rounded-full border border-gray-300 hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-110"
-  >
-    <FaPinterest size={20} className="text-red-600 hover:text-white" />
-  </a>
-  <a
-    href="https://www.tiktok.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="bg-white p-2 rounded-full border border-gray-300 hover:bg-pink-500 transition duration-300 ease-in-out transform hover:scale-110"
-  >
-    <FaTiktok size={20} className="text-pink-500 hover:text-white" />
-  </a>
+  rel="noopener noreferrer"
+>
+  <FaTiktok size={20} className="hover:text-heading" />
+</a>
+<a
+  href="https://wa.me/966557480817"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaWhatsapp size={20} className="hover:text-heading" />
+</a>
+
+  
 </div>
 
 
