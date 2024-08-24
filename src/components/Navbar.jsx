@@ -42,7 +42,7 @@ const Navbar = ({ language, toggleLanguage }) => {
     <nav className={`bg-gradient-to-r from-black to-transparent 
     bg-cover bg-center py-4 text-white ${language === 'en' ? 'font-en' : 'font-ar'}`}>
       <div className="max-w-7xl mx-auto px-2">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-24 px-3">
           <div className="flex items-center">
             <Link to="/">
               <img 
@@ -134,70 +134,69 @@ const Navbar = ({ language, toggleLanguage }) => {
               {language === 'en' ? 'AR' : 'EN'}
             </button>
           </div>
-
-          {/* Mobile Menu Button */}
           <div className="xl:hidden">
   <motion.button
     onClick={toggleMenu}
     className={`inline-flex items-center justify-center rounded-full
       transition-all duration-500 transform bg-secondary hover:bg-secondary-dark
       relative p-4 shadow-lg`}
-    initial={false}
-    animate={isMenuOpen ? "open" : "closed"}
+    initial={{ scale: 1.3, opacity: 1 }}
+    animate="animated"  // إضافة حركة مستمرة
     variants={{
-      open: { scale: 1.1, boxShadow: "0px 0px 15px rgba(255, 183, 3, 0.5)" },
-      closed: { scale: 1, boxShadow: "none" },
+      animated: { 
+        scale: [1.1, 1.2, 1.1], 
+        opacity: [0.8, 1, 0.8], 
+        boxShadow: ["rgba(255, 183, 3, 0.4)", "0px 0px 20px rgba(255, 183, 3, 0.7)", "0px 0px 15px rgba(255, 183, 3, 0.9)"],
+        transition: {
+          duration: 20,  // زيادة مدة الحركة لبطء التأثير
+          repeat: Infinity,  // تكرار بلا نهاية
+          repeatType: "loop",
+        }
+      },
+    
+      open: { 
+        scale: 1, 
+        opacity: 1, 
+        boxShadow: "0px 0px 20px rgba(255, 183, 3, 0.7)",
+        transition: { duration: 0.5 }  
+      },
+      closed: { 
+        scale: 1.1, 
+        opacity: 0.8, 
+        boxShadow: "0px 0px 15px white",
+        border: "3px solid white", 
+        borderRadius: "50%", 
+        transition: { duration: 1.2 },  
+      },
     }}
+    // whileHover={{ scale: 0.8, boxShadow: "4px 30px 25px rgba(255, 183, 3)" }} // تأثير التمرير
   >
     {isMenuOpen ? <FaTimes className="h-6 w-6 text-white" /> : <FaBars className="h-6 w-6 text-white" />}
-    
-    {/* Outer Circle */}
+
+    {/* الدائرة الخارجية */}
     <motion.span
-      className={`absolute inset-0 rounded-full transition-all duration-500 ease-in-out`}
-      initial={false}
-      animate={isMenuOpen ? "open" : "closed"}
-      variants={{
-        open: { 
-          opacity: 1, 
-          scale: 1.2, 
-          borderColor: "white", 
-          borderWidth: "3px", 
-          x: 0,    // Adjusted to ensure alignment
-          y: 0     // Adjusted to ensure alignment
-        },
-        closed: { 
-          opacity: 0, 
-          scale: 0.8, 
-          borderColor: "transparent", 
-          borderWidth: "2px" 
-        },
-      }}
-    ></motion.span>
-    
-    {/* Inner Circle */}
-    <motion.span
-      className={`absolute inset-1 rounded-full transition-all duration-500 ease-in-out`}
-      initial={false}
-      animate={isMenuOpen ? "open" : "closed"}
-      variants={{
-        open: { 
-          opacity: 1, 
-          scale: 1, 
-          borderColor: "white", 
-          borderWidth: "1px", 
-          x: 0,    // Adjusted to ensure alignment
-          y: 0     // Adjusted to ensure alignment
-        },
-        closed: { 
-          opacity: 0, 
-          scale: 0.6, 
-          borderColor: "transparent", 
-          borderWidth: "0px" 
-        },
+      className={`absolute inset-0 rounded-full border-[3px] border-secondary transition-all duration-500 ease-in-out`}
+      animate={{
+        scale: [1, 1.2, 1],
+        opacity: [1, 0.6, 1],
+        boxShadow: [
+          "0px 0px 10px rgba(255, 183, 3, 0.5)",
+          "0px 0px 15px rgba(255, 183, 3, 0.7)",
+          "0px 0px 10px rgba(255, 183, 3, 0.5)"
+        ],
+        transition: {
+          duration: 2, // مدة التكرار الكامل
+          repeat: Infinity, // يكرر الحركة بلا نهاية
+          repeatType: "loop",
+        }
       }}
     ></motion.span>
   </motion.button>
 </div>
+
+
+
+
 
 
 
@@ -249,7 +248,7 @@ const Navbar = ({ language, toggleLanguage }) => {
         </div>
       </div> */}
       <motion.div
-    className={`xl:hidden fixed top-[120px] bottom-0 left-0 right-0 bg-primary bg-opacity-90 
+    className={`xl:hidden fixed top-[125px] bottom-0 left-0 right-0 bg-primary bg-opacity-90 
       z-50 transform transition-transform duration-500 ease-in-out`}
     initial="hidden"
     animate={isMenuOpen ? "visible" : "hidden"}
