@@ -1,5 +1,8 @@
 import React from 'react';
 import logo from "../assets/Logo_footer.png";
+import english_logo from "../assets/logo/Saudi vision 2030 Logo-01.png";
+import expo from "../assets/logo/expo.png";
+
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import p1 from "../assets/projects/Gamers/image-68.jpg";
 import p2 from "../assets/projects/BOOTHS/image-84.jpg";
@@ -14,10 +17,18 @@ const Footer = ({ language }) => {
      ${language === 'ar' ? 'font-ar' : 'font-en'}`}>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}
-        <div>
-          <img src={logo} alt="Lead Logo" className="mb-4 w-[50%] md:w-[75%] lg:w-[50%] m-auto" />
+      <div>
+      <div>
+          <img src={logo} alt="Lead Logo" className="mb-4 w-[50%] md:w-[75%] lg:w-[40%] m-auto" />
         </div>
-
+        
+        <div>
+          <img src={expo} alt="Lead Logo" className="mb-4 w-[50%]  mt-3 md:w-[75%] lg:w-[40%] m-auto" />
+        </div>
+        <div>
+          <img src={english_logo} alt="Lead Logo" className="mb-4 mt-3 w-[50%] md:w-[75%] lg:w-[40%] m-auto" />
+        </div>
+      </div>
         {/* Main Menu */}
         <div>
           <h4 className="font-bold text-lg mb-4 text-center md:text-left">
@@ -97,8 +108,8 @@ const Footer = ({ language }) => {
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
-                {language === 'ar' ? 'الخالدية، الرياض، السعودية' : 'Al-Khalidiya, Riyadh, Saudi Arabia'}
-              </a>
+                {language === 'ar' ? 'غوبيرا، الرياض، السعودية' : 'Ghubairah, Riyadh, Saudi Arabia'}
+                </a>
             </li>
 
             <li className="flex justify-center md:justify-start items-center">
@@ -109,7 +120,8 @@ const Footer = ({ language }) => {
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
-                {language === 'ar' ? 'غوبيرا، الرياض، السعودية' : 'Ghubairah, Riyadh, Saudi Arabia'}
+                {language === 'ar' ? 'الخالدية، الرياض، السعودية' : 'Al-Khalidiya, Riyadh, Saudi Arabia'}
+
               </a>
             </li>
           </ul>
