@@ -152,7 +152,7 @@ const Footer = ({ language }) => {
       </div>
 
       <div className="border-t border-white mt-8 pt-4 text-center text-white">
-        <p>{language === 'ar' ? 'جميع الحقوق محفوظة &copy; 2024 تم التطوير بواسطة أمنية رفعت' : 'All Rights Reserved &copy; 2024 Developed By OmniaRafat'}</p>
+        <p>{language === 'ar' ? 'جميع الحقوق محفوظة &copy; 2024 تم التطوير بواسطة أمنية رافت' : 'All Rights Reserved &copy; 2024 Developed By OmniaRafat, inspire By eslam magdy'}</p>
       </div>
     </footer>
   );
