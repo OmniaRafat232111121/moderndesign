@@ -29,7 +29,6 @@ import { ar } from '../locales/ar'; // Importing Arabic translations
 
 import Title from './Title';
 import { Link } from 'react-router-dom';
-
 const capitalizeTitle = (title) => {
   return title
     .split(' ')
@@ -117,19 +116,16 @@ const Projects = ({ language }) => {  // Accept language as a prop
               />
               <motion.h3
                 className="absolute inset-0 flex items-center justify-center text-lg md:text-md text-white
-                  bg-primary bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                  bg-primary bg-opacity-50"
               >
                 {capitalizeTitle(language === 'ar' ? project.titleAr : project.title)}
               </motion.h3>
               <Link to={`/projects/${project.id}/${project.title}`}>
-                  <button className="absolute bottom-0 top-[80px] left-0 right-0 m-auto w-32 h-10 
-                   bg-yellow-500 text-white py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100
-                   transition-opacity duration-300 ease-in-out">
-                    {language === 'ar' ? 'عرض المزيد' : 'Show More'}
-                  </button>
-                </Link>
+                <button className="absolute bottom-0 top-[80px] left-0 right-0 m-auto w-32 h-10 
+                  bg-yellow-500 text-white py-2 px-4 rounded-lg">
+                  {language === 'ar' ? 'عرض المزيد' : 'Show More'}
+                </button>
+              </Link>
             </div>
           ))}
         </Slider>

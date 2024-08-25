@@ -17,18 +17,14 @@ const Footer = ({ language }) => {
      ${language === 'ar' ? 'font-ar' : 'font-en'}`}>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}
-      <div>
-      <div>
-          <img src={logo} alt="Lead Logo" className="mb-4 w-[50%] md:w-[75%] lg:w-[40%] m-auto" />
-        </div>
-        
-        <div>
-          <img src={expo} alt="Lead Logo" className="mb-4 w-[50%]  mt-3 md:w-[75%] lg:w-[40%] m-auto" />
-        </div>
-        <div>
-          <img src={english_logo} alt="Lead Logo" className="mb-4 mt-3 w-[50%] md:w-[75%] lg:w-[40%] m-auto" />
-        </div>
-      </div>
+        <div className="flex   items-center text-center ">
+        <img src={english_logo} alt="Saudi Vision 2030 Logo" className="mb-4 w-24 md:w-32 lg:w-24 mx-auto mt-3" />
+        <img src={logo} alt="Lead Logo" className="mb-4 w-36 md:w-32 lg:w-24 mx-auto" />
+  <img src={expo} alt="Expo Logo" className="mb-4 w-24 md:w-32 lg:w-24 mx-auto mt-3" />
+
+</div>
+
+
         {/* Main Menu */}
         <div>
           <h4 className="font-bold text-lg mb-4 text-center md:text-left">
@@ -108,7 +104,7 @@ const Footer = ({ language }) => {
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
-                {language === 'ar' ? 'غوبيرا، الرياض، السعودية' : 'Ghubairah, Riyadh, Saudi Arabia'}
+                {language === 'ar' ? 'غبيرا, الرياض، السعودية' : 'Ghubairah, Riyadh, Saudi Arabia'}
                 </a>
             </li>
 
@@ -152,52 +148,51 @@ const Footer = ({ language }) => {
       </div>
 
       <div className="border-t border-white mt-8 pt-4 text-center text-white">
-      <p>
-  {language === 'ar' ? (
-    <>
-      جميع الحقوق محفوظة &copy; 2024 تم التطوير بواسطة{' '}
-      <a
-        href="https://www.linkedin.com/in/omnia-rafat-0125191b8/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="cursor-pointer hover:underline"
-      >
-        أمنية رافت
-      </a>
-      inspire By{' '}
-      <a
-        href="https://www.behance.net/eslammagdy50"
-        target="_blank"
-        rel="noopener noreferrer"
-        className=" cursor-pointer hover:underline"
-      >
-      اسلام مجدي
-      </a>
-    </>
-  ) : (
-    <>
-      All Rights Reserved &copy; 2024 Developed By{' '}
-      <a
-        href="https://www.linkedin.com/in/omnia-rafat-0125191b8/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="cursor-pointer hover:underline"
-      >
-        Omnia Rafat
-      </a>
-      , inspire By{' '}
-      <a
-        href="https://www.behance.net/eslammagdy50"
-        target="_blank"
-        rel="noopener noreferrer"
-        className=" cursor-pointer hover:underline"
-      >
-        Eslam Magdy
-      </a>
-    </>
-  )}
-</p>
-
+        <p>
+          {language === 'ar' ? (
+            <>
+              جميع الحقوق محفوظة &copy; 2024 تم التطوير بواسطة{' '}
+              <a
+                href="https://www.linkedin.com/in/omnia-rafat-0125191b8/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer hover:underline"
+              >
+                أمنية رافت
+              </a>
+              inspire By{' '}
+              <a
+                href="https://www.behance.net/eslammagdy50"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" cursor-pointer hover:underline"
+              >
+              اسلام مجدي
+              </a>
+            </>
+          ) : (
+            <>
+              All Rights Reserved &copy; 2024 Developed By{' '}
+              <a
+                href="https://www.linkedin.com/in/omnia-rafat-0125191b8/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer hover:underline"
+              >
+                Omnia Rafat
+              </a>
+              , inspire By{' '}
+              <a
+                href="https://www.behance.net/eslammagdy50"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" cursor-pointer hover:underline"
+              >
+                Eslam Magdy
+              </a>
+            </>
+          )}
+        </p>
       </div>
     </footer>
   );
