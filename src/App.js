@@ -20,6 +20,7 @@ import Layout from './components/Layout';
 import ContactUs from './components/ContactUs';
 import Blog from './components/Blog';
 import ProjectDetails from './components/ProjectDetails';
+import Services from './components/Services';
 
 function App() {
   const [language, setLanguage] = useState('en');
@@ -49,12 +50,14 @@ function App() {
             <Projects language={language} data-aos="fade-up" />
             <Gallery language={language} data-aos="fade-up" />
             <Aims language={language} data-aos="fade-up" />
+            <Services language={language} data-aos="fade-up" />
             {/* <Cover data-aos="fade-up" /> */}
              <Partners language={language} data-aos="fade-up" />
           </>
         } />
         <Route path="/about" element={<About language={language} data-aos="fade-up" />} />
         <Route path="/blog" element={<Blog language={language} data-aos="fade-up" />} />
+        <Route path="/services" element={<Services language={language} data-aos="fade-up" />} />
 
         <Route path="/projects" element={<Projects language={language} data-aos="fade-up" />} />
         <Route path="/gallery" element={<Gallery language={language} data-aos="fade-up" />} />
