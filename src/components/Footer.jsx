@@ -152,7 +152,52 @@ const Footer = ({ language }) => {
       </div>
 
       <div className="border-t border-white mt-8 pt-4 text-center text-white">
-        <p>{language === 'ar' ? 'جميع الحقوق محفوظة &copy; 2024 تم التطوير بواسطة أمنية رافت' : 'All Rights Reserved &copy; 2024 Developed By OmniaRafat, inspire By Eslam Magdy'}</p>
+      <p>
+  {language === 'ar' ? (
+    <>
+      جميع الحقوق محفوظة &copy; 2024 تم التطوير بواسطة{' '}
+      <a
+        href="https://www.linkedin.com/in/omnia-rafat-0125191b8/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="cursor-pointer hover:underline"
+      >
+        أمنية رافت
+      </a>
+      inspire By{' '}
+      <a
+        href="https://www.behance.net/eslammagdy50"
+        target="_blank"
+        rel="noopener noreferrer"
+        className=" cursor-pointer hover:underline"
+      >
+      اسلام مجدي
+      </a>
+    </>
+  ) : (
+    <>
+      All Rights Reserved &copy; 2024 Developed By{' '}
+      <a
+        href="https://www.linkedin.com/in/omnia-rafat-0125191b8/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="cursor-pointer hover:underline"
+      >
+        Omnia Rafat
+      </a>
+      , inspire By{' '}
+      <a
+        href="https://www.behance.net/eslammagdy50"
+        target="_blank"
+        rel="noopener noreferrer"
+        className=" cursor-pointer hover:underline"
+      >
+        Eslam Magdy
+      </a>
+    </>
+  )}
+</p>
+
       </div>
     </footer>
   );
