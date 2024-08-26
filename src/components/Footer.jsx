@@ -3,7 +3,7 @@ import logo from "../assets/Logo_footer.png";
 import english_logo from "../assets/logo/Saudi vision 2030 Logo-01.png";
 import expo from "../assets/logo/expo.png";
 
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn, FaInstagram, FaWhatsapp, FaTiktok } from 'react-icons/fa';
 import p1 from "../assets/projects/Gamers/image-68.jpg";
 import p2 from "../assets/projects/BOOTHS/image-84.jpg";
 import p3 from "../assets/projects/DIRIYAH BIENNIAL/image-29.jpg";
@@ -17,7 +17,7 @@ const Footer = ({ language }) => {
      ${language === 'ar' ? 'font-ar' : 'font-en'}`}>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}
-        <div className="flex   items-center text-center ">
+        <div className="flex   items-center text-center space-x-4 ">
         <img src={english_logo} alt="Saudi Vision 2030 Logo" className="mb-4 w-24 md:w-32 lg:w-24 mx-auto mt-3" />
         <img src={logo} alt="Lead Logo" className="mb-4 w-36 md:w-32 lg:w-24 mx-auto" />
   <img src={expo} alt="Expo Logo" className="mb-4 w-24 md:w-32 lg:w-24 mx-auto mt-3" />
@@ -122,12 +122,14 @@ const Footer = ({ language }) => {
             </li>
           </ul>
           <div className="flex justify-center md:justify-start mt-4 space-x-4">
-            <a href="https://facebook.com" className="text-white hover:text-yellow-500"><FaFacebookF /></a>
-            <a href="https://twitter.com" className="text-white hover:text-yellow-500"><FaTwitter /></a>
-            <a href="https://youtube.com" className="text-white hover:text-yellow-500"><FaYoutube /></a>
-            <a href="https://linkedin.com" className="text-white hover:text-yellow-500"><FaLinkedinIn /></a>
-            <a href="https://instagram.com" className="text-white hover:text-yellow-500"><FaInstagram /></a>
+            <a href="https://www.facebook.com/profile.php?id=61564932237031&mibextid=ZbWKwL" className="text-white hover:text-yellow-500"><FaFacebookF /></a>
+            {/* <a href="https://twitter.com" className="text-white hover:text-yellow-500"><FaTwitter /></a>
+            <a href="https://youtube.com" className="text-white hover:text-yellow-500"><FaYoutube /></a> */}
+            <a href="https://www.linkedin.com/in/modern-design-a78203325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="text-white hover:text-yellow-500"><FaLinkedinIn /></a>
+            <a href="https://www.instagram.com/moderndesign200/profilecard/?igsh=azBuczVoZ2YxMnk3" className="text-white hover:text-yellow-500"><FaInstagram /></a>
+            <a href="https://www.tiktok.com/@modern.design296?_t=8p9GqXbEvp9&_r=1" className="text-white hover:text-yellow-500"><FaTiktok /></a>
             <a href="https://wa.me/966557480817" className="text-white hover:text-yellow-500"><FaWhatsapp /></a>
+
           </div>
         </div>
 
