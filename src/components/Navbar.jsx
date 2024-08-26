@@ -231,7 +231,8 @@ const Navbar = ({ language, toggleLanguage }) => {
       
       <div className="flex flex-col space-y-4 mt-4 items-center justify-center m-auto">
         <motion.a 
-          href="https://www.linkedin.com" 
+          href="https://www.linkedin.com/in/modern-design-a78203325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+
           target="_blank" 
           rel="noopener noreferrer" 
           className="hover:text-heading"
@@ -240,7 +241,8 @@ const Navbar = ({ language, toggleLanguage }) => {
           <FaLinkedin size={20} />
         </motion.a>
         <motion.a 
-          href="https://www.facebook.com" 
+                       href="https://www.facebook.com/profile.php?id=61564932237031&mibextid=ZbWKwL"
+
           target="_blank" 
           rel="noopener noreferrer" 
           className="hover:text-heading"
@@ -249,15 +251,15 @@ const Navbar = ({ language, toggleLanguage }) => {
           <FaFacebook size={20} />
         </motion.a>
         <motion.a 
-          href="https://www.twitter.com" 
+        href="https://www.linkedin.com/in/modern-design-a78203325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target="_blank" 
           rel="noopener noreferrer" 
           className="hover:text-heading"
           variants={menuItemVariants}
         >
-          <FaTwitter size={20} />
+          <FaLinkedin size={20} />
         </motion.a>
-        <motion.a 
+        {/* <motion.a 
           href="https://www.pinterest.com" 
           target="_blank" 
           rel="noopener noreferrer" 
@@ -265,9 +267,9 @@ const Navbar = ({ language, toggleLanguage }) => {
           variants={menuItemVariants}
         >
           <FaPinterest size={20} />
-        </motion.a>
+        </motion.a> */}
         <motion.a 
-          href="https://www.tiktok.com" 
+          href="https://www.tiktok.com/@modern.design296?_t=8p9GqXbEvp9&_r=1"
           target="_blank" 
           rel="noopener noreferrer" 
           className="hover:text-heading"
