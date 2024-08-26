@@ -47,38 +47,37 @@ const Services = ({ language }) => {
   };
 
   return (
-<div className={`mt-3 ${language === 'en' ? 'font-en' : 'font-ar'}`}>
-<Title className="mb-3" text={language === 'ar' ? 'الخدمات' : 'Services'} />
+    <div className={`mt-3 ${language === 'en' ? 'font-en' : 'font-ar'}`}>
+      <Title className="mb-3" text={language === 'ar' ? 'الخدمات' : 'Services'} />
 
       <motion.div
-        className={`services-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 ${language === 'ar' ? 'font-ar' : 'font-en'}`}
+        className={`services-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6  ${language === 'ar' ? 'font-ar' : 'font-en'}`}
         initial="hidden"
         animate="show"
         variants={containerVariants}
       >
         {services.map((service, index) => (
-        <motion.div
-        key={index}
-        className="service-card bg-gradient-to-r from-[#104448]  to-[#18917c]  shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2"
-        variants={cardVariants}
-        whileHover={{ scale: 1.05 }}
-      >
-        <div className="flex items-center justify-center p-4">
-          <div className="bg-white px-4 rounded-full h-52 w-52 flex items-center justify-center overflow-hidden">
-            <img
-              src={service.image}
-              alt={service.nameEn}
-              className="service-image h-40 object-cover transition-transform duration-500 ease-in-out transform hover:translate-y-2"
-            />
-          </div>
-        </div>
-        <div className="p-4 bg-white">
-          <h3 className="text-lg font-semibold text-center text-customGreen">
-            {language === 'ar' ? service.nameAr : service.nameEn}
-          </h3>
-        </div>
-      </motion.div>
-      
+          <motion.div
+            key={index}
+            className="service-card animated-border shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2"
+            variants={cardVariants}
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="flex bg-primary items-center justify-center p-4">
+              <div className="px-4 rounded-full h-52 w-52 flex items-center justify-center overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.nameEn}
+                  className="service-image h-40 object-cover transition-transform duration-500 ease-in-out transform hover:translate-y-2"
+                />
+              </div>
+            </div>
+            <div className="p-4 bg-white">
+              <h3 className="text-lg font-semibold text-center text-primary">
+                {language === 'ar' ? service.nameAr : service.nameEn}
+              </h3>
+            </div>
+          </motion.div>
         ))}
       </motion.div>
     </div>
