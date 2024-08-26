@@ -213,21 +213,19 @@ const Navbar = ({ language, toggleLanguage }) => {
     variants={menuContainerVariants}
   >
     <div className="px-4 pt-4 pb-3 space-y-1 sm:px-3">
-      {menuItems.map((item) => (
-        <motion.div
-          key={item.href}
-          variants={menuItemVariants}
-          className="block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
-          onClick={toggleMenu}
-        >
-          <RouterLink
-            to={item.href}
-            className="hover:text-heading hover:border-heading transition-all duration-300 ease-in-out"
-          >
-            {item.name}
-          </RouterLink>
-        </motion.div>
-      ))}
+    {menuItems.map((item) => (
+  <RouterLink
+    key={item.href}
+    to={item.href}
+    className="group relative inline-block px-4 py-2 border-2 border-transparent text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out"
+  >
+    <span className="relative z-10 group-hover:text-heading transition-colors duration-300 ease-in-out">
+      {item.name}
+    </span>
+    <span className="absolute inset-0 border border-heading scale-0 origin-bottom-right group-hover:scale-100 group-hover:origin-top-left transition-transform duration-300 ease-in-out rounded-md"></span>
+    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-heading opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></span>
+  </RouterLink>
+))}
       
       <div className="flex flex-col space-y-4 mt-4 items-center justify-center m-auto">
         <motion.a 

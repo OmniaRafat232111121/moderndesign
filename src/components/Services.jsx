@@ -73,7 +73,7 @@ const Services = ({ language }) => {
           </div>
         </div>
         <div className="p-4 bg-white">
-          <h3 className="text-lg font-semibold text-center ">
+          <h3 className="text-lg font-semibold text-center text-customGreen">
             {language === 'ar' ? service.nameAr : service.nameEn}
           </h3>
         </div>
