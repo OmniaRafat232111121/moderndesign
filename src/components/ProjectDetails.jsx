@@ -44,7 +44,18 @@ import img10 from '../assets/projects/Book Fair/main.jpg';
 
 import img11 from '../assets/projects/tourism/main.jpg';
 import img12 from '../assets/projects/Fairgrounds/main.jpg';
+import img12_1 from '../assets/projects/Fairgrounds/1.jpg';
+import img12_2 from '../assets/projects/Fairgrounds/3.jpg';
+import img12_3 from '../assets/projects/Fairgrounds/4.jpg';
+import img12_4 from '../assets/projects/Fairgrounds/5.jpg';
+import img12_5 from '../assets/projects/Fairgrounds/6.jpg';
+import img12_6 from '../assets/projects/Fairgrounds/7.jpg';
+import img12_7 from '../assets/projects/Fairgrounds/8.jpg';
+import img12_8 from '../assets/projects/Fairgrounds/9.jpg';
+import img12_9 from '../assets/projects/Fairgrounds/10.jpg';
 
+import img12_10 from '../assets/projects/Fairgrounds/11.jpg';
+import img12_11 from '../assets/projects/Fairgrounds/12.jpg';
 
 import img13 from '../assets/projects/National Day/main.jpg';
 import img14 from '../assets/projects/Alfas project/main.jpg';
@@ -127,6 +138,17 @@ console.log(title,"title")
   ],
   '12': [
     { original: img12, thumbnail: img12 },
+    { original: img12_1, thumbnail: img12_1 },
+    { original: img12_2, thumbnail: img12_2 },
+    { original: img12_3, thumbnail: img12_3},
+    { original: img12_4, thumbnail: img12_4},
+
+    { original: img12_5, thumbnail: img12_5},
+
+    { original: img12_6, thumbnail: img12_6},
+    { original: img12_7, thumbnail: img12_7},
+    { original: img12_8, thumbnail: img12_8},
+    { original: img12_9, thumbnail: img12_9},
 
   ],
   '13': [
