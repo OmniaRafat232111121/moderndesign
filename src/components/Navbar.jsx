@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes, FaGlobeAmericas, FaGlobe, FaLinkedin, FaFacebook, FaTwitter, FaPinterest, FaTiktok, FaWhatsapp } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGlobeAmericas, FaGlobe, FaLinkedin, FaFacebook, FaTwitter, FaPinterest, FaTiktok, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link, Link as RouterLink, useLocation } from 'react-router-dom';
 import logo from "../assets/logo/english_logo.png";
@@ -90,28 +90,29 @@ const Navbar = ({ language, toggleLanguage }) => {
             <div className={`flex space-x-4 ${language === 'ar' ? 'space-x-reverse' : ''}`}>
               {/* Social Media Links */}
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/modern-design-a78203325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaLinkedin size={20} className="hover:text-heading" />
               </a>
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/profile.php?id=61564932237031&mibextid=ZbWKwL"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaFacebook size={20} className="hover:text-heading" />
               </a>
               <a
-                href="https://www.twitter.com"
+                href="https://www.instagram.com/moderndesign200/profilecard/?igsh=azBuczVoZ2YxMnk3"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaTwitter size={20} className="hover:text-heading" />
+                <FaInstagram size={20} className="hover:text-heading" />
               </a>
+              
               <a
-                href="https://www.tiktok.com/@yourUsername"
+                href="https://www.tiktok.com/@modern.design296?_t=8p9GqXbEvp9&_r=1"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -204,49 +205,6 @@ const Navbar = ({ language, toggleLanguage }) => {
         </div>
       </div>
 
-      {/* Mobile Menu
-      <div className={`xl:hidden fixed top-[120px] bottom-0 left-0 right-0 bg-primary bg-opacity-90 
-        z-50 transform transition-transform duration-500 ease-in-out 
-        ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="px-4 pt-4 pb-3 space-y-1 sm:px-3">
-          {menuItems.map((item) => (
-            <RouterLink
-              key={item.href}
-              to={item.href}
-              className="hover:text-heading hover:border-heading block px-3 py-2
-               rounded-md text-base font-medium cursor-pointer transition-all duration-300 ease-in-out"
-              onClick={toggleMenu}
-            >
-              {item.name}
-            </RouterLink>
-          ))}
-          <div className="flex flex-col space-y-4 mt-4 items-center justify-center m-auto">
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-heading">
-              <FaLinkedin size={20} />
-            </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-heading">
-              <FaFacebook size={20} />
-            </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-heading">
-              <FaTwitter size={20} />
-            </a>
-            <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" className="hover:text-heading">
-              <FaPinterest size={20} />
-            </a>
-            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className="hover:text-heading">
-              <FaTiktok size={20} />
-            </a>
-          </div>
-          <button
-            onClick={toggleLanguage}
-            className="w-full text-left m-auto flex items-center justify-center
-             hover:text-heading  px-3 py-2 rounded-md text-base font-medium mt-4"
-          >
-            {language === 'en' ? <FaGlobeAmericas className="inline mr-2" /> : <FaGlobe className="inline ml-2" />}
-            {language === 'en' ? 'AR' : 'EN'}
-          </button>
-        </div>
-      </div> */}
       <motion.div
     className={`xl:hidden fixed top-[125px] bottom-0 left-0 right-0 bg-primary bg-opacity-90 
       z-50 transform transition-transform duration-500 ease-in-out`}
@@ -255,25 +213,24 @@ const Navbar = ({ language, toggleLanguage }) => {
     variants={menuContainerVariants}
   >
     <div className="px-4 pt-4 pb-3 space-y-1 sm:px-3">
-      {menuItems.map((item) => (
-        <motion.div
-          key={item.href}
-          variants={menuItemVariants}
-          className="block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
-          onClick={toggleMenu}
-        >
-          <RouterLink
-            to={item.href}
-            className="hover:text-heading hover:border-heading transition-all duration-300 ease-in-out"
-          >
-            {item.name}
-          </RouterLink>
-        </motion.div>
-      ))}
+    {menuItems.map((item) => (
+  <RouterLink
+    key={item.href}
+    to={item.href}
+    className="group relative inline-block px-4 py-2 border-2 border-transparent text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out"
+  >
+    <span className="relative z-10 group-hover:text-heading transition-colors duration-300 ease-in-out">
+      {item.name}
+    </span>
+    <span className="absolute inset-0 border border-heading scale-0 origin-bottom-right group-hover:scale-100 group-hover:origin-top-left transition-transform duration-300 ease-in-out rounded-md"></span>
+    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-heading opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></span>
+  </RouterLink>
+))}
       
       <div className="flex flex-col space-y-4 mt-4 items-center justify-center m-auto">
         <motion.a 
-          href="https://www.linkedin.com" 
+          href="https://www.linkedin.com/in/modern-design-a78203325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+
           target="_blank" 
           rel="noopener noreferrer" 
           className="hover:text-heading"
@@ -282,7 +239,8 @@ const Navbar = ({ language, toggleLanguage }) => {
           <FaLinkedin size={20} />
         </motion.a>
         <motion.a 
-          href="https://www.facebook.com" 
+                       href="https://www.facebook.com/profile.php?id=61564932237031&mibextid=ZbWKwL"
+
           target="_blank" 
           rel="noopener noreferrer" 
           className="hover:text-heading"
@@ -291,15 +249,15 @@ const Navbar = ({ language, toggleLanguage }) => {
           <FaFacebook size={20} />
         </motion.a>
         <motion.a 
-          href="https://www.twitter.com" 
+        href="https://www.linkedin.com/in/modern-design-a78203325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target="_blank" 
           rel="noopener noreferrer" 
           className="hover:text-heading"
           variants={menuItemVariants}
         >
-          <FaTwitter size={20} />
+          <FaLinkedin size={20} />
         </motion.a>
-        <motion.a 
+        {/* <motion.a 
           href="https://www.pinterest.com" 
           target="_blank" 
           rel="noopener noreferrer" 
@@ -307,9 +265,9 @@ const Navbar = ({ language, toggleLanguage }) => {
           variants={menuItemVariants}
         >
           <FaPinterest size={20} />
-        </motion.a>
+        </motion.a> */}
         <motion.a 
-          href="https://www.tiktok.com" 
+          href="https://www.tiktok.com/@modern.design296?_t=8p9GqXbEvp9&_r=1"
           target="_blank" 
           rel="noopener noreferrer" 
           className="hover:text-heading"
