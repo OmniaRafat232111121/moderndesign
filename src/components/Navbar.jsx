@@ -10,7 +10,10 @@ const Navbar = ({ language, toggleLanguage }) => {
   const location = useLocation(); // Hook to get current route
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
+  const handleMenuItemClick = () => {
+    // Close the mobile menu after clicking a menu item
+    setIsMenuOpen(false);
+  };
   const menuItems = [
     { name: language === 'en' ? 'Home' : 'الرئيسية', href: '/' },
     { name: language === 'en' ? 'About Us' : 'من نحن', href: '/about' },
@@ -174,6 +177,7 @@ const Navbar = ({ language, toggleLanguage }) => {
     }}
     // whileHover={{ scale: 0.8, boxShadow: "4px 30px 25px rgba(255, 183, 3)" }} // تأثير التمرير
   >
+    
     {isMenuOpen ? <FaTimes className="h-6 w-6 text-white" /> : <FaBars className="h-6 w-6 text-white" />}
 
     {/* الدائرة الخارجية */}
@@ -219,6 +223,7 @@ const Navbar = ({ language, toggleLanguage }) => {
       <RouterLink
         key={item.href}
         to={item.href}
+        onClick={handleMenuItemClick}
         className="group relative inline-block px-4 py-2 border-2 border-transparent text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out"
       >
         <span className="relative z-10 group-hover:text-heading transition-colors duration-300 ease-in-out">
