@@ -16,8 +16,9 @@ const Navbar = ({ language, toggleLanguage }) => {
     { name: language === 'en' ? 'About Us' : 'من نحن', href: '/about' },
     { name: language === 'en' ? 'Services' : 'خدماتنا', href: '/services' },
     { name: language === 'en' ? 'Projects' : 'مشروعتنا', href: '/projects' },
-    { name: language === 'en' ? 'Partners' : 'شركائنا', href: '/partners' },
     { name: language === 'en' ? 'Blog' : 'المدونة', href: '/blog' },
+
+    { name: language === 'en' ? 'Partners' : 'شركائنا', href: '/partners' },
     { name: language === 'en' ? 'Contact' : 'اتصل بنا', href: '/contact' },
   ];
   const menuContainerVariants = {
@@ -41,7 +42,8 @@ const Navbar = ({ language, toggleLanguage }) => {
   return (
     <nav className={`bg-gradient-to-r from-black to-transparent 
     bg-cover bg-center py-4 text-white ${language === 'en' ? 'font-en' : 'font-ar'}`}>
-      <div className="max-w-7xl mx-auto px-2">
+  <div className="max-w-screen-xl mx-auto px-2">
+
         <div className="flex items-center justify-between h-24 px-3">
           <div className="flex items-center">
             <Link to="/">
@@ -55,8 +57,8 @@ const Navbar = ({ language, toggleLanguage }) => {
 
           {/* Full Menu */}
           <div className="hidden xl:flex items-center space-x-6">
-            <div className={`flex items-baseline space-x-4 ${language === 'ar' ? 'space-x-reverse ml-3' : ''}`}>
-              {menuItems.map((item) => (
+          <div className={`flex space-x-4 lg:space-x-2 xl:space-x-3 ${language === 'ar' ? 'space-x-reverse' : ''}`}>
+          {menuItems.map((item) => (
                 location.pathname === '/' && item.href === '/' ? (
                   <ScrollLink
                     key={item.href}
@@ -206,88 +208,71 @@ const Navbar = ({ language, toggleLanguage }) => {
       </div>
 
       <motion.div
-    className={`xl:hidden fixed top-[125px] bottom-0 left-0 right-0 bg-primary bg-opacity-90 
-      z-50 transform transition-transform duration-500 ease-in-out`}
-    initial="hidden"
-    animate={isMenuOpen ? "visible" : "hidden"}
-    variants={menuContainerVariants}
-  >
-    <div className="px-4 pt-4 pb-3 space-y-1 sm:px-3">
+  className={`xl:hidden fixed top-[125px] bottom-0 left-0 right-0 bg-primary bg-opacity-90  
+    z-50 transform transition-transform duration-500 ease-in-out`}
+  initial="hidden"
+  animate={isMenuOpen ? "visible" : "hidden"}
+  variants={menuContainerVariants}
+>
+  <div className="px-4 pt-4 pb-3 space-y-1 sm:px-3 flex flex-col">
     {menuItems.map((item) => (
-  <RouterLink
-    key={item.href}
-    to={item.href}
-    className="group relative inline-block px-4 py-2 border-2 border-transparent text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out"
-  >
-    <span className="relative z-10 group-hover:text-heading transition-colors duration-300 ease-in-out">
-      {item.name}
-    </span>
-    <span className="absolute inset-0 border border-heading scale-0 origin-bottom-right group-hover:scale-100 group-hover:origin-top-left transition-transform duration-300 ease-in-out rounded-md"></span>
-    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-heading opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></span>
-  </RouterLink>
-))}
-      
-      <div className="flex flex-col space-y-4 mt-4 items-center justify-center m-auto">
-        <motion.a 
-          href="https://www.linkedin.com/in/modern-design-a78203325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hover:text-heading"
-          variants={menuItemVariants}
-        >
-          <FaLinkedin size={20} />
-        </motion.a>
-        <motion.a 
-                       href="https://www.facebook.com/profile.php?id=61564932237031&mibextid=ZbWKwL"
-
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hover:text-heading"
-          variants={menuItemVariants}
-        >
-          <FaFacebook size={20} />
-        </motion.a>
-        <motion.a 
+      <RouterLink
+        key={item.href}
+        to={item.href}
+        className="group relative inline-block px-4 py-2 border-2 border-transparent text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out"
+      >
+        <span className="relative z-10 group-hover:text-heading transition-colors duration-300 ease-in-out">
+          {item.name}
+        </span>
+        <span className="absolute inset-0 border border-heading scale-0 origin-bottom-right group-hover:scale-100 group-hover:origin-top-left transition-transform duration-300 ease-in-out rounded-md"></span>
+      </RouterLink>
+    ))}
+    
+    {/* Social Links */}
+    <div className="flex flex-col space-y-4 mt-4 items-center justify-center m-auto">
+      <motion.a 
         href="https://www.linkedin.com/in/modern-design-a78203325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hover:text-heading"
-          variants={menuItemVariants}
-        >
-          <FaLinkedin size={20} />
-        </motion.a>
-        {/* <motion.a 
-          href="https://www.pinterest.com" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hover:text-heading"
-          variants={menuItemVariants}
-        >
-          <FaPinterest size={20} />
-        </motion.a> */}
-        <motion.a 
-          href="https://www.tiktok.com/@modern.design296?_t=8p9GqXbEvp9&_r=1"
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hover:text-heading"
-          variants={menuItemVariants}
-        >
-          <FaTiktok size={20} />
-        </motion.a>
-      </div>
-      
-      <motion.button
-        onClick={toggleLanguage}
-        className="w-full text-left m-auto flex items-center justify-center
-         hover:text-heading  px-3 py-2 rounded-md text-base font-medium mt-4"
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="hover:text-heading"
         variants={menuItemVariants}
       >
-        {language === 'en' ? <FaGlobeAmericas className="inline mr-2" /> : <FaGlobe className="inline ml-2" />}
-        {language === 'en' ? 'AR' : 'EN'}
-      </motion.button>
+        <FaLinkedin size={20} />
+      </motion.a>
+      <motion.a 
+        href="https://www.facebook.com/profile.php?id=61564932237031&mibextid=ZbWKwL"
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="hover:text-heading"
+        variants={menuItemVariants}
+      >
+        <FaFacebook size={20} />
+      </motion.a>
+      <motion.a 
+        href="https://www.tiktok.com/@modern.design296?_t=8p9GqXbEvp9&_r=1"
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="hover:text-heading"
+        variants={menuItemVariants}
+      >
+        <FaTiktok size={20} />
+      </motion.a>
     </div>
-  </motion.div>
+    
+    {/* Call-to-Actions */}
+    <motion.button
+      onClick={toggleLanguage}
+      className="w-full text-left m-auto flex items-center justify-center hover:text-heading px-3 py-2 rounded-md text-base font-medium mt-4"
+      variants={menuItemVariants}
+    >
+      {language === 'en' ? <FaGlobeAmericas className="inline mr-2" /> : <FaGlobe className="inline ml-2" />}
+      {language === 'en' ? 'AR' : 'EN'}
+    </motion.button>
+
+  
+  </div>
+</motion.div>
+
     </nav>
   );
 };

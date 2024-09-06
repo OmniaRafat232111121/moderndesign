@@ -47,19 +47,22 @@ function App() {
           <>
             <HeroSection language={language} />
             <About language={language} data-aos="fade-up" />
+            <Services language={language} data-aos="fade-up" />
+
             <Projects language={language} data-aos="fade-up" />
+
             <Gallery language={language} data-aos="fade-up" />
             <Aims language={language} data-aos="fade-up" />
-            <Services language={language} data-aos="fade-up" />
             {/* <Cover data-aos="fade-up" /> */}
              <Partners language={language} data-aos="fade-up" />
           </>
         } />
         <Route path="/about" element={<About language={language} data-aos="fade-up" />} />
-        <Route path="/blog" element={<Blog language={language} data-aos="fade-up" />} />
         <Route path="/services" element={<Services language={language} data-aos="fade-up" />} />
-
         <Route path="/projects" element={<Projects language={language} data-aos="fade-up" />} />
+
+        <Route path="/blog" element={<Blog language={language} data-aos="fade-up" />} />
+
         <Route path="/gallery" element={<Gallery language={language} data-aos="fade-up" />} />
         <Route path="/aims" element={<Aims language={language} data-aos="fade-up" />} />
         <Route path="/cover" element={<Cover data-aos="fade-up" />} />
