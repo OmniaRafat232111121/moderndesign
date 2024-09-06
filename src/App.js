@@ -21,6 +21,7 @@ import ContactUs from './components/ContactUs';
 import Blog from './components/Blog';
 import ProjectDetails from './components/ProjectDetails';
 import Services from './components/Services';
+import ArticleDetail from './components/ArticleDetail';
 
 function App() {
   const [language, setLanguage] = useState('en');
@@ -68,6 +69,7 @@ function App() {
         <Route path="/cover" element={<Cover data-aos="fade-up" />} />
         <Route path="/contact" element={<ContactUs  language={language} data-aos="fade-up" />} />
         <Route path="/projects/:id/:title" element={<ProjectDetails />} />
+        <Route path="/article/:articleId" element={<ArticleDetail  language={language}/>} />
 
         <Route path="/partners" element={<Partners_Page language={language} data-aos="fade-up" />} />
       </Routes>
