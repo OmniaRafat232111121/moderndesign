@@ -116,6 +116,21 @@ body {
   background-size: 200% 200%; /* Adjust the size for more noticeable animation */
   animation: rotateGradient 3s linear infinite;
 }
-.strong-text strong {
-  color: #4CAF50; /* Change this color to your preferred one */
+li strong {
+  color: #ffcf32; /* Change this color to your preferred one */
+}
+/* Add this in your CSS file */
+.styled-header {
+  font-weight: bold;
+  color: #ff5733; /* Customize the color */
+  margin-bottom: 1rem; /* Space after each header */
+  border-bottom: 2px solid #ff5733; /* Optional: Adding an underline */
+  padding-bottom: 0.5rem; /* Space between text and underline */
+}
+
+
+/* Add styles to adjust the size or color of icons */
+.react-icon {
+  font-size: 1.5rem;
+  color: #ff5733; /* Example color */
 }

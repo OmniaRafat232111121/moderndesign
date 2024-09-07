@@ -59,20 +59,20 @@ const Services = ({ language }) => {
         {services.map((service, index) => (
           <motion.div
             key={index}
-            className="service-card animated-border shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2"
+            className="service-card animated-border shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2 bg-white border border-gray-200"
             variants={cardVariants}
           >
-            <div className="flex bg-primary items-center justify-center p-4">
-              <div className="px-4 rounded-full h-52 w-52 flex items-center justify-center overflow-hidden">
+            <div className="flex bg-primary items-center justify-center h-56">
+              <div className="w-full h-full flex items-center justify-center overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.nameEn}
-                  className="service-image h-40 object-cover transition-transform duration-500 ease-in-out transform hover:translate-y-2"
+                  className="object-contain w-full h-full transition-transform duration-500 ease-in-out transform hover:scale-110"
                 />
               </div>
             </div>
-            <div className="p-4 bg-white">
-              <h3 className="text-lg font-semibold text-center text-primary">
+            <div className="p-4 bg-white text-center">
+              <h3 className="text-lg font-semibold text-primary">
                 {language === 'ar' ? service.nameAr : service.nameEn}
               </h3>
             </div>
