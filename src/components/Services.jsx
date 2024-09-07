@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Title from './Title';
-import acrylic_and_forex from '../assets/services/Acrylic and Forex.jpg';
+import acrylic_and_forex from '../assets/services/Acrylic and Forex new.jpg';
 import banner_and_sticker_flex_print from '../assets/services/Banner and sitker and flex Print.jpg';
 import box from '../assets/services/box.jpg';
 import business_card from '../assets/services/Business Card.jpg';
@@ -65,7 +65,8 @@ const Services = ({ language }) => {
             <img
               src={service.image}
               alt={service.nameEn}
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-64" 
+
             />
             <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-2 text-center">
               <h3 className="text-lg font-semibold">
