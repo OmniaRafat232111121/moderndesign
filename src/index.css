@@ -116,3 +116,6 @@ body {
   background-size: 200% 200%; /* Adjust the size for more noticeable animation */
   animation: rotateGradient 3s linear infinite;
 }
+.strong-text strong {
+  color: #4CAF50; /* Change this color to your preferred one */
+}

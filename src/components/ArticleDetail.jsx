@@ -104,7 +104,7 @@ const ArticleDetail = ({ language }) => {
             {language === 'ar' ? article.titleAr : article.titleEn}
           </h2>
           <div
-            className="prose prose-lg text-white"
+            className="prose prose-lg text-white strong-text"  // Added class for custom strong styling
             style={{ lineHeight: '3' }}  // Adding space between lines
             dangerouslySetInnerHTML={{ __html: language === 'ar' ? article.contentAr : article.contentEn }}
           ></div>
