@@ -51,7 +51,7 @@ const Services = ({ language }) => {
     <div className={`mt-3 ${language === 'en' ? 'font-en' : 'font-ar'}`}>
       <Title className="mb-3" text={language === 'ar' ? 'الخدمات' : 'Services'} />
       <motion.div
-        className={`services-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 ${language === 'ar' ? 'font-ar' : 'font-en'}`}
+        className={`services-container  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 ${language === 'ar' ? 'font-ar' : 'font-en'}`}
         initial="hidden"
         animate="show"
         variants={containerVariants}
@@ -59,7 +59,7 @@ const Services = ({ language }) => {
         {services.map((service, index) => (
           <motion.div
             key={index}
-            className="service-card relative shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2"
+            className="service-card relative  animated-border  shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2"
             variants={cardVariants}
           >
             <img
