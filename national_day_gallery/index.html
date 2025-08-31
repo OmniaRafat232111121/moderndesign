@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اليوم الوطني السعودي - معرض الصور</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="tsparticles"></div>
+
+    <!-- حاوية التحكم بالصوت الجديدة -->
+    <div id="audio-controls" class="audio-controls">
+        <button id="mute-btn" class="mute-button">🔊</button>
+        <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="0.2">
+    </div>
+
+    <audio id="background-audio" loop></audio>
+
+    <!-- Banner Section with Language Detection -->
+    <div id="national-day-banner" class="national-day-banner">
+        <div class="banner-content">
+            <a href="https://www.moderndesignadv.com/" target="_blank" class="logo-link">
+                <img src="images/company-logo.svg" alt="شعار الشركة" class="header-logo">
+            </a>
+            <div class="banner-text">
+                <h1 id="banner-title">احتفالاً بيومنا الوطني</h1>
+                <p id="banner-subtitle">مجموعة من اللحظات التي تشكل هويتنا</p>
+            </div>
+            <div class="logo-link">
+                <img src="images/national-day-logo.svg" alt="شعار اليوم الوطني" class="header-logo">
+            </div>
+        </div>
+    </div>
+
+    <main class="content-wrapper">
+        <div class="gallery-container">
+            <!-- المعرض الكامل بـ 28 صورة -->
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="استيكرات السيارات"><img src="images/استيكرات السيارات.jpg" alt="استيكرات السيارات"><div class="item-overlay"><h3>استيكرات السيارات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="استيكرات"><img src="images/استيكرات.jpg" alt="استيكرات"><div class="item-overlay"><h3>استيكرات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="أعلام قماشية"><img src="images/أعلام قماشية.jpg" alt="أعلام قماشية"><div class="item-overlay"><h3>أعلام قماشية</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="أقلام"><img src="images/أقلام.jpg" alt="أقلام"><div class="item-overlay"><h3>أقلام</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="أكواب"><img src="images/أكواب.jpg" alt="أكواب"><div class="item-overlay"><h3>أكواب</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="أكياس قماشية"><img src="images/أكياس قماشية.jpg" alt="أكياس قماشية"><div class="item-overlay"><h3>أكياس قماشية</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="بالونات"><img src="images/بالونات.jpg" alt="بالونات"><div class="item-overlay"><h3>بالونات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="بروش"><img src="images/بروش.jpg" alt="بروش"><div class="item-overlay"><h3>بروش</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="بطاقة هدايا"><img src="images/بطاقة هدايا.jpg" alt="بطاقة هدايا"><div class="item-overlay"><h3>بطاقة هدايا</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="بنرات"><img src="images/بنرات.jpg" alt="بنرات"><div class="item-overlay"><h3>بنرات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="بوب اب"><img src="images/بوب اب.jpg" alt="بوب اب"><div class="item-overlay"><h3>بوب اب</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="بوكسات"><img src="images/بوكسات.jpg" alt="بوكسات"><div class="item-overlay"><h3>بوكسات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="بولو"><img src="images/بولو.jpg" alt="بولو"><div class="item-overlay"><h3>بولو</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="توزيعات"><img src="images/توزيعات.jpg" alt="توزيعات"><div class="item-overlay"><h3>توزيعات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="تيشرتات"><img src="images/تيشرتات.jpg" alt="تيشرتات"><div class="item-overlay"><h3>تيشرتات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="جداريات"><img src="images/جداريات.jpg" alt="جداريات"><div class="item-overlay"><h3>جداريات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="حافظة مياه"><img src="images/حافظة مياه.jpg" alt="حافظة مياه"><div class="item-overlay"><h3>حافظة مياه</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="حائط"><img src="images/حائط.jpg" alt="حائط"><div class="item-overlay"><h3>حائط</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="دفتر ملاحظات"><img src="images/دفتر ملاحظات.jpg" alt="دفتر ملاحظات"><div class="item-overlay"><h3>دفتر ملاحظات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="فوركس"><img src="images/فوركس.jpg" alt="فوركس"><div class="item-overlay"><h3>فوركس</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="قاعدة أكواب"><img src="images/قاعدة أكواب.jpg" alt="قاعدة أكواب"><div class="item-overlay"><h3>قاعدة أكواب</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="قبعات"><img src="images/قبعات.jpg" alt="قبعات"><div class="item-overlay"><h3>قبعات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="لوحات"><img src="images/لوحات.jpg" alt="لوحات"><div class="item-overlay"><h3>لوحات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="ملصقات"><img src="images/ملصقات.jpg" alt="ملصقات"><div class="item-overlay"><h3>ملصقات</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="مناديل"><img src="images/مناديل.jpg" alt="مناديل"><div class="item-overlay"><h3>مناديل</h3></div></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=966557480817" target="_blank" class="gallery-item-link">
+                <div class="gallery-item" data-name="ميداليات"><img src="images/ميداليات.jpg" alt="ميداليات"><div class="item-overlay"><h3>ميداليات</h3></div></div>
+            </a>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -46,5 +46,9 @@ export const ar = {
     send: "إرسال",
     saudi_arabia: "المملكة العربية السعودية",
     contact_us: "اتصل بنا",
-    modern_design_advertising: "التصميم الحديث للإعلان"
+    modern_design_advertising: "التصميم الحديث للإعلان",
+    national_day: "اليوم الوطني",
+    national_day_gallery: "معرض اليوم الوطني",
+    explore_gallery: "استكشف المعرض",
+    celebrate_heritage: "احتفل بالتراث"
 };

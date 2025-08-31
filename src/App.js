@@ -22,9 +22,11 @@ import Blog from './components/Blog';
 import ProjectDetails from './components/ProjectDetails';
 import Services from './components/Services';
 import ArticleDetail from './components/ArticleDetail';
+import NationalDayBanner from './components/NationalDayBanner';
+import NationalDayGallery from './components/NationalDayGallery';
 
 function App() {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('ar');
 
   useEffect(() => {
     AOS.init({
@@ -47,6 +49,7 @@ function App() {
         <Route path="/" element={
           <>
             <HeroSection language={language} />
+            <NationalDayBanner language={language} />
             <About language={language} data-aos="fade-up" />
             <Services language={language} data-aos="fade-up" />
 
@@ -72,6 +75,7 @@ function App() {
         <Route path="/article/:articleId" element={<ArticleDetail  language={language}/>} />
 
         <Route path="/partners" element={<Partners_Page language={language} data-aos="fade-up" />} />
+        <Route path="/national-day-gallery" element={<NationalDayGallery language={language} data-aos="fade-up" />} />
       </Routes>
     </Layout>
   </Router>

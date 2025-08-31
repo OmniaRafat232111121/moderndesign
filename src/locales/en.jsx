@@ -8,7 +8,11 @@ const en = {
     send: "Send",
     saudi_arabia: "Saudi Arabia",
     contact_us: "Contact us",
-    modern_design_advertising: "Modern Design Advertising"
+    modern_design_advertising: "Modern Design Advertising",
+    national_day: "National Day",
+    national_day_gallery: "National Day Gallery",
+    explore_gallery: "Explore Gallery",
+    celebrate_heritage: "Celebrate Heritage"
   };
   
   export default en;
