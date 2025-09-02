@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from "../assets/لوجوهات على الموقع.png";
 
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaLinkedinIn, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import p1 from "../assets/projects/Gamers/image-68.jpg";
 import p2 from "../assets/projects/BOOTHS/image-84.jpg";
 import p3 from "../assets/projects/DIRIYAH BIENNIAL/image-29.jpg";
@@ -84,18 +84,13 @@ const Footer = ({ language }) => {
                 {language === 'ar' ? 'الخالدية، الرياض، السعودية' : 'Al-Khalidiya, Riyadh, Saudi Arabia'}
               </a>
             </li>
-            <li className="flex justify-center md:justify-start items-center">
-              <FaMapMarkerAlt className={`mr-2 ${language === 'ar' ? 'ml-2' : 'mr-2'}`} />
-              <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                {language === 'ar' ? 'غبيرا, الرياض، السعودية' : 'Ghubairah, Riyadh, Saudi Arabia'}
-              </a>
-            </li>
+
           </ul>
           <div className="flex justify-center md:justify-start mt-4 space-x-4 rtl:space-x-reverse">
-            <a href="https://www.facebook.com" className="text-white hover:text-yellow-500"><FaFacebookF /></a>
-            <a href="https://www.linkedin.com" className="text-white hover:text-yellow-500"><FaLinkedinIn /></a>
-            <a href="https://www.instagram.com" className="text-white hover:text-yellow-500"><FaInstagram /></a>
-            <a href="https://www.tiktok.com" className="text-white hover:text-yellow-500"><FaTiktok /></a>
+            <a href="https://www.facebook.com/ModernDesignAdv" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500"><FaFacebookF /></a>
+            <a href="https://x.com/moderndesignadv" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500"><FaTwitter /></a>
+            <a href="https://www.instagram.com/moderndesignadv" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500"><FaInstagram /></a>
+            <a href="https://www.tiktok.com/@moderndesignadv" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500"><FaTiktok /></a>
             <a href="https://wa.me/966557480817" className="text-white hover:text-yellow-500"><FaWhatsapp /></a>
           </div>
         </div>
@@ -122,7 +117,7 @@ const Footer = ({ language }) => {
           {language === 'ar' ? (
             <>
               جميع الحقوق محفوظة &copy; 2024 تم التطوير بواسطة{' '}
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:underline">
+              <a href="https://x.com/moderndesignadv" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:underline">
                 أمنية رافت
               </a>{' '}
               inspire By{' '}
@@ -133,7 +128,7 @@ const Footer = ({ language }) => {
           ) : (
             <>
               All Rights Reserved &copy; 2024 Developed By{' '}
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:underline">
+              <a href="https://x.com/moderndesignadv" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:underline">
                 Omnia Rafat
               </a>{' '}
               inspire By{' '}

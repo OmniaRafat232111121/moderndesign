@@ -18,23 +18,23 @@ const NationalDayBanner = ({ language }) => {
   };
 
   return (
-    <section className="relative w-full h-[400px] md:h-[700px] overflow-hidden">
-      {/* Banner Container */}
-      <div className="relative w-full h-full">
-        <motion.div
-          className="absolute inset-0 w-full h-full cursor-pointer"
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+    <section className="mt-6 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24 relative w-full h-[180px] xs:h-[200px] sm:h-[250px] md:h-[350px] lg:h-[450px] xl:h-[550px] 2xl:h-[650px] overflow-hidden px-1 xs:px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 2xl:px-12">
+      {/* Banner Container with Border */}
+      <div className="relative w-full h-full border-2 xs:border-2 sm:border-3 md:border-4 border-yellow-500 rounded-md sm:rounded-lg md:rounded-xl shadow-md sm:shadow-lg md:shadow-2xl">
+        <div
+          className="absolute inset-0 w-full h-full cursor-pointer rounded-md sm:rounded-lg md:rounded-xl overflow-hidden"
           onClick={handleBannerClick}
         >
           {/* Banner Image */}
           <img
             src={banner.image}
             alt="National Day Banner"
-            className="w-full h-full object-cover"
+            className="w-full h-full "
           />
-        </motion.div>
+          
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-black bg-opacity-20 sm:bg-opacity-25 md:bg-opacity-30 rounded-md sm:rounded-lg md:rounded-xl"></div>
+        </div>
       </div>
     </section>
   );

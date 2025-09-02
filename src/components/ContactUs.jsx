@@ -97,7 +97,7 @@ const ContactUs = ({ language }) => {
 
             <div className={`flex items-center justify-center ${language === 'en' ? 'space-x-4' : 'space-x-reverse space-x-4'} text-2xl mt-6`}>
   <button
-    onClick={() => window.open('https://www.facebook.com', '_blank')}
+                onClick={() => window.open('https://www.facebook.com/ModernDesignAdv', '_blank')}
     className="bg-white p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-110"
     aria-label="Visit our Facebook page"
   >
@@ -118,14 +118,14 @@ const ContactUs = ({ language }) => {
     <FaYoutube className="text-red-600" />
   </button>
   <button
-    onClick={() => window.open('https://www.linkedin.com', '_blank')}
+                onClick={() => window.open('https://x.com/moderndesignadv', '_blank')}
     className="bg-white p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-110"
     aria-label="Visit our LinkedIn page"
   >
     <FaLinkedin className="text-blue-700" />
   </button>
   <button
-    onClick={() => window.open('https://www.instagram.com', '_blank')}
+                onClick={() => window.open('https://www.instagram.com/moderndesignadv', '_blank')}
     className="bg-white p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-110"
     aria-label="Visit our Instagram page"
   >

@@ -9,6 +9,7 @@ import {
   FaInstagram,
   FaFacebook,
   FaTwitter,
+  FaTiktok,
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import LocalizedStrings from 'react-localization';
@@ -119,13 +120,13 @@ const Navbar = ({ language, toggleLanguage }) => {
                   className="text-white hover:text-heading transition duration-300 mr-3"
                 />
               </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/ModernDesignAdv" target="_blank" rel="noopener noreferrer">
                 <FaFacebook
                   size={24}
                   className="text-white hover:text-heading transition duration-300"
                 />
               </a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://x.com/moderndesignadv" target="_blank" rel="noopener noreferrer">
                 <FaTwitter
                   size={24}
                   className="text-white hover:text-heading transition duration-300"
@@ -170,17 +171,17 @@ const Navbar = ({ language, toggleLanguage }) => {
 
             {/* Social Media Icons for small screens */}
             <div className="flex flex-col space-y-4 mt-4">
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={20} className="text-white hover:text-gray-400" />
+              <a href="https://x.com/moderndesignadv" target="_blank" rel="noopener noreferrer">
+                <FaTwitter size={20} className="text-white hover:text-gray-400" />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/moderndesignadv" target="_blank" rel="noopener noreferrer">
                 <FaInstagram size={20} className="text-white hover:text-gray-400" />
               </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/ModernDesignAdv" target="_blank" rel="noopener noreferrer">
                 <FaFacebook size={20} className="text-white hover:text-gray-400" />
               </a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter size={20} className="text-white hover:text-gray-400" />
+              <a href="https://www.tiktok.com/@moderndesignadv" target="_blank" rel="noopener noreferrer">
+                <FaTiktok size={20} className="text-white hover:text-gray-400" />
               </a>
             </div>
 

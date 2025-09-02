@@ -95,21 +95,21 @@ const Navbar = ({ language, toggleLanguage }) => {
             <div className={`flex space-x-4 ${language === 'ar' ? 'space-x-reverse' : ''}`}>
               {/* Social Media Links */}
               <a
-                href="https://www.linkedin.com/in/modern-design-a78203325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                href="https://x.com/moderndesignadv"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaLinkedin size={20} className="hover:text-heading" />
               </a>
               <a
-                href="https://www.facebook.com/profile.php?id=61564932237031&mibextid=ZbWKwL"
+                href="https://www.facebook.com/ModernDesignAdv"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaFacebook size={20} className="hover:text-heading" />
               </a>
               <a
-                href="https://www.instagram.com/moderndesign200/profilecard/?igsh=azBuczVoZ2YxMnk3"
+                href="https://www.instagram.com/moderndesignadv"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -117,7 +117,7 @@ const Navbar = ({ language, toggleLanguage }) => {
               </a>
               
               <a
-                href="https://www.tiktok.com/@modern.design296?_t=8p9GqXbEvp9&_r=1"
+                href="https://www.tiktok.com/@moderndesignadv"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -236,16 +236,16 @@ const Navbar = ({ language, toggleLanguage }) => {
     {/* Social Links */}
     <div className="flex flex-col space-y-4 mt-4 items-center justify-center m-auto">
       <motion.a 
-        href="https://www.linkedin.com/in/modern-design-a78203325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        href="https://x.com/moderndesignadv"
         target="_blank" 
         rel="noopener noreferrer" 
         className="hover:text-heading"
         variants={menuItemVariants}
       >
-        <FaLinkedin size={20} />
+        <FaTwitter size={20} />
       </motion.a>
       <motion.a 
-        href="https://www.facebook.com/profile.php?id=61564932237031&mibextid=ZbWKwL"
+                          href="https://www.facebook.com/ModernDesignAdv"
         target="_blank" 
         rel="noopener noreferrer" 
         className="hover:text-heading"
@@ -254,7 +254,7 @@ const Navbar = ({ language, toggleLanguage }) => {
         <FaFacebook size={20} />
       </motion.a>
       <motion.a 
-        href="https://www.tiktok.com/@modern.design296?_t=8p9GqXbEvp9&_r=1"
+        href="https://www.tiktok.com/@moderndesignadv"
         target="_blank" 
         rel="noopener noreferrer" 
         className="hover:text-heading"
