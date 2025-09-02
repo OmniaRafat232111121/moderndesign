@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import bannerEn from '../assets/بنر اليوم الوطني الموقع انجلش copy.jpg';
-import bannerAr from '../assets/بنر اليوم الوطني الموقع copy.jpg';
+import bannerEn from '../assets/be.jpg';
+import bannerAr from '../assets/ba.jpg';
 
 const NationalDayBanner = ({ language }) => {
   const navigate = useNavigate();
