@@ -135,20 +135,174 @@ li strong {
   color: #ff5733; /* Example color */
 }
 
-/* Custom Banner Responsive Styles */
+/* Custom Banner Responsive Styles - Fixed Aspect Ratio */
 .national-day-banner {
-  width: 100vw;
+  width: 100%;
   max-width: 100%;
   overflow: hidden;
   position: relative;
-  height: 250px; /* Default height for smallest screens */
 }
 
 .national-day-banner img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+}
+
+/* Banner Container with Fixed Aspect Ratio */
+.banner-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+/* Responsive Aspect Ratios */
+@media (min-width: 640px) {
+  .banner-container {
+    aspect-ratio: 16/8;
+  }
+}
+
+@media (min-width: 768px) {
+  .banner-container {
+    aspect-ratio: 16/7;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner-container {
+    aspect-ratio: 16/6;
+  }
+}
+
+@media (min-width: 1280px) {
+  .banner-container {
+    aspect-ratio: 16/5;
+  }
+}
+
+@media (min-width: 1536px) {
+  .banner-container {
+    aspect-ratio: 16/4;
+  }
+}
+
+/* Responsive Border Widths - Based on screen width */
+.banner-border-responsive {
+  border: 1px solid #f59e0b; /* Default thin border for small screens */
+}
+
+@media (min-width: 640px) {
+  .banner-border-responsive {
+    border-width: 2px;
+  }
+}
+
+@media (min-width: 768px) {
+  .banner-border-responsive {
+    border-width: 3px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner-border-responsive {
+    border-width: 4px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .banner-border-responsive {
+    border-width: 4px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .banner-border-responsive {
+    border-width: 4px;
+  }
+}
+
+/* Banner Border and Shadow Styles */
+.banner-border {
+  border: 4px solid #f59e0b; /* Yellow border */
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+/* Very Light Overlay - Almost Transparent */
+.banner-overlay {
+  background-color: rgba(0, 0, 0, 0.05); /* Very light black overlay */
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+/* Ensure banner maintains proportions */
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .banner-container {
+    aspect-ratio: 16/9;
+  }
+  
+  .banner-overlay {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  
+  .banner-border-responsive {
+    border-width: 1px;
+  }
+}
+
+/* Landscape mobile adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .banner-container {
+    aspect-ratio: 16/6;
+  }
+  
+  .banner-border-responsive {
+    border-width: 1px;
+  }
+}
+
+/* Tablet portrait adjustments */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .banner-container {
+    aspect-ratio: 16/7;
+  }
+  
+  .banner-border-responsive {
+    border-width: 2px;
+  }
+}
+
+/* Large desktop adjustments */
+@media (min-width: 1920px) {
+  .banner-container {
+    aspect-ratio: 16/3;
+  }
+  
+  .banner-border-responsive {
+    border-width: 5px;
+  }
+}
+
+/* Ensure no stretching on any device */
+.banner-no-stretch {
+  object-fit: contain !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* Extra Small Devices (phones, 320px and up) */
@@ -353,3 +507,4 @@ li strong {
     height: 160px;
   }
 }
+
