@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from "../assets/Logo_footer.png";
-import english_logo from "../assets/logo/Saudi vision 2030 Logo-01.png";
-import expo from "../assets/logo/expo.png";
+import logo from "../assets/لوجوهات على الموقع.png";
+
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaLinkedinIn, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import p1 from "../assets/projects/Gamers/image-68.jpg";
 import p2 from "../assets/projects/BOOTHS/image-84.jpg";
@@ -16,9 +15,7 @@ const Footer = ({ language }) => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logos */}
         <div className="flex items-center justify-center space-x-4 rtl:space-x-reverse">
-          <img src={english_logo} alt="Saudi Vision 2030 Logo" className="mb-4 w-24 md:w-32 lg:w-24 mx-auto mt-3" />
-          <img src={logo} alt="Lead Logo" className="mb-4 w-36 md:w-32 lg:w-24 mx-auto" />
-          <img src={expo} alt="Expo Logo" className="mb-4 w-24 md:w-32 lg:w-24 mx-auto mt-3" />
+         <img src={logo} alt="Logo" className='w-[400px]' />
         </div>
 
         {/* Main Menu */}
