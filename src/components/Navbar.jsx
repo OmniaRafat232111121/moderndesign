@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes, FaGlobeAmericas, FaGlobe, FaLinkedin, FaFacebook, FaTwitter, FaPinterest, FaTiktok, FaWhatsapp, FaInstagram } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGlobeAmericas, FaGlobe, FaFacebook, FaPinterest, FaTiktok, FaWhatsapp, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link, Link as RouterLink, useLocation } from 'react-router-dom';
 import logo from "../assets/logo/english_logo.png";
@@ -99,7 +100,7 @@ const Navbar = ({ language, toggleLanguage }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin size={20} className="hover:text-heading" />
+                <FaXTwitter size={20} className="hover:text-heading" />
               </a>
               <a
                 href="https://www.facebook.com/ModernDesignAdv"
@@ -242,7 +243,7 @@ const Navbar = ({ language, toggleLanguage }) => {
         className="hover:text-heading"
         variants={menuItemVariants}
       >
-        <FaTwitter size={20} />
+        <FaXTwitter size={20} />
       </motion.a>
       <motion.a 
                           href="https://www.facebook.com/ModernDesignAdv"
