@@ -4,14 +4,18 @@ import { useInView } from 'react-intersection-observer';
 import { TypeAnimation } from 'react-type-animation'; 
 import v1 from '../assets/about/viedo.mp4'; 
 import { FaWhatsapp } from 'react-icons/fa';
+import { strings } from '../strings';
 
-const HeroSection = () => {
+const HeroSection = ({ language }) => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.2, 
   });
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  // Set language for strings
+  strings.setLanguage(language);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -68,22 +72,53 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
       )}
 
-      {/* Optional Additional Content on Top of Overlay */}
-      <div className="relative z-20 text-center text-white">
+      {/* Hero Content with Enhanced Arabic-English Support */}
+      <div 
+        className={`relative z-20 text-white ${language === 'ar' ? 'rtl' : 'ltr'}`} 
+        dir={language === 'ar' ? 'rtl' : 'ltr'}
+        style={{ 
+          textAlign: 'center',
+          maxWidth: '90%',
+          margin: '0 auto',
+          padding: '0 1rem'
+        }}
+      >
         <motion.h1
-          className="text-5xl font-bold mb-4"
+          className={`font-bold mb-6 px-4 leading-tight ${language === 'ar' ? 'font-ar' : 'font-en'}`}
+          style={{
+            fontSize: language === 'ar' ? 'clamp(1.5rem, 4vw, 3rem)' : 'clamp(1.75rem, 4.5vw, 3.5rem)',
+            lineHeight: language === 'ar' ? '1.3' : '1.2',
+            fontWeight: '700',
+            textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
+            wordSpacing: language === 'ar' ? '0.1em' : 'normal',
+            letterSpacing: language === 'en' ? '0.02em' : 'normal'
+          }}
           initial="hidden"
           animate={controls}
           variants={{
-            hidden: { opacity: 0, x: -100 },
-            visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 1 } },
+            hidden: { 
+              opacity: 0, 
+              x: language === 'ar' ? 100 : -100,
+              y: 20
+            },
+            visible: { 
+              opacity: 1, 
+              x: 0, 
+              y: 0,
+              transition: { 
+                duration: 1.2, 
+                delay: 1,
+                ease: "easeOut"
+              } 
+            },
           }}
         >
           <TypeAnimation
+            key={language} // Force re-render when language changes
             sequence={[
-              'Welcome to',
+              strings.hero.welcome,
               1000, 
-              'Welcome to Modern Design Advertising Company', 
+              strings.hero.companyName, 
               2000, 
               '', 
               1000, 
@@ -91,37 +126,50 @@ const HeroSection = () => {
             wrapper="span"
             cursor={true}
             repeat={Infinity} 
-            style={{ display: 'inline-block' }}
+            style={{ 
+              display: 'inline-block',
+              minHeight: language === 'ar' ? '1.5em' : '1.2em'
+            }}
           />
         </motion.h1>
 
         <motion.p
-          className="text-xl mt-4 text-white"
+          className={`text-white ${language === 'ar' ? 'font-ar' : 'font-en'}`}
+          style={{
+            fontSize: language === 'ar' ? 'clamp(1rem, 2.5vw, 1.4rem)' : 'clamp(1.1rem, 2.8vw, 1.5rem)',
+            lineHeight: language === 'ar' ? '1.8' : '1.6',
+            fontWeight: '400',
+            textShadow: '1px 1px 3px rgba(0,0,0,0.7)',
+            maxWidth: language === 'ar' ? '100%' : '80%',
+            margin: language === 'ar' ? '0 auto' : '0 auto',
+            padding: '0 1rem',
+            wordSpacing: language === 'ar' ? '0.05em' : 'normal',
+            letterSpacing: language === 'en' ? '0.01em' : 'normal'
+          }}
           initial="hidden"
           animate={controls}
           variants={{
-            hidden: { opacity: 0, x: 100 },
-            visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 2 } },
+            hidden: { 
+              opacity: 0, 
+              x: language === 'ar' ? -100 : 100,
+              y: 20
+            },
+            visible: { 
+              opacity: 1, 
+              x: 0, 
+              y: 0,
+              transition: { 
+                duration: 1.2, 
+                delay: 2.2,
+                ease: "easeOut"
+              } 
+            },
           }}
         >
-          We specialize in creating exceptional and unforgettable events with a focus on modern design and innovative strategies.
+          {strings.hero.description}
         </motion.p>
       </div>
 
-      {/* WhatsApp Floating Button */}
-      <div className="whatsapp-float fixed bottom-4 right-4 z-50">
-        <a
-          href={
-            isMobile
-              ? "https://api.whatsapp.com/send?phone=+966557480817"
-              : "https://web.whatsapp.com/send?phone=++966557480817"
-          }
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaWhatsapp size={32} color="#fff" />
-        </a>
-      </div>
 
     </section>
   );
