@@ -83,7 +83,7 @@ const Footer = ({ language }) => {
                 </li>
                 <li className="flex items-center justify-center md:justify-start">
                   <FaMapMarkerAlt className="ml-2" />
-                  <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  <a href="https://maps.app.goo.gl/6wKVHhLLPeBzLc2p6" target="_blank" rel="noopener noreferrer" className="hover:underline">
                     الخالدية، الرياض، السعودية
                   </a>
                 </li>
@@ -176,7 +176,7 @@ const Footer = ({ language }) => {
                 </li>
                 <li className="flex items-center justify-center md:justify-start">
                   <FaMapMarkerAlt className="mr-2" />
-                  <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  <a href="https://maps.app.goo.gl/6wKVHhLLPeBzLc2p6" target="_blank" rel="noopener noreferrer" className="hover:underline">
                     Al-Khalidiya, Riyadh, Saudi Arabia
                   </a>
                 </li>
