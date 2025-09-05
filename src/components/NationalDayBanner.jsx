@@ -37,10 +37,12 @@ const NationalDayBanner = ({ language }) => {
           <motion.img
             src={banner.image}
             alt={language === 'ar' ? 'بنر اليوم الوطني' : 'National Day Banner '}
-            className="max-w-full h-full  border-2 border-yellow-500 rounded-md  "
+            className="max-w-full h-full  border-2 border-yellow-500 rounded-md cursor-pointer "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
+            onClick={handleBannerClick}
+
           />
           
 
