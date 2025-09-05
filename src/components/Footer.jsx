@@ -88,7 +88,7 @@ const Footer = ({ language }) => {
                   </a>
                 </li>
               </ul>
-              <div className="flex mt-4 space-x-4 rtl:space-x-reverse justify-center md:justify-end rtl:flex-row-reverse">
+              <div className="flex mt-4 gap-4 justify-center md:justify-start rtl:justify-end">
                 <a href="https://wa.me/966557480817" className="text-white hover:text-yellow-500"><FaWhatsapp /></a>
                 <a href="https://www.tiktok.com/@moderndesignadv" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500"><FaTiktok /></a>
                 <a href="https://www.instagram.com/moderndesignadv" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500"><FaInstagram /></a>

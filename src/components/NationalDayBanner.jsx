@@ -25,23 +25,19 @@ const NationalDayBanner = ({ language }) => {
       ${language === 'ar' ? 'rtl' : 'ltr'}`}>
       {/* Banner Container with Enhanced Border and Effects */}
       <motion.div 
-        className="relative w-full h-full 
-       rounded-md sm:rounded-lg md:rounded-xl shadow-md sm:shadow-lg md:shadow-2xl"
+        className="relative w-full h-full flex items-center justify-center
+       "
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
        
       >
-        <div
-          className="absolute inset-0 w-full h-full cursor-pointer flex items-center justify-center
-        overflow-hidden group"
-          onClick={handleBannerClick}
-        >
+        
           {/* Banner Image with Enhanced Effects */}
           <motion.img
             src={banner.image}
-            alt={language === 'ar' ? 'بنر اليوم الوطني' : 'National Day Banner'}
-            className="max-w-full h-full  rounded-md  "
+            alt={language === 'ar' ? 'بنر اليوم الوطني' : 'National Day Banner '}
+            className="max-w-full h-full  border-2 border-yellow-500 rounded-md  "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
@@ -52,7 +48,7 @@ const NationalDayBanner = ({ language }) => {
       
           
          
-        </div>
+       
       </motion.div>
     </section>
   );
