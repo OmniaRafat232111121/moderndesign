@@ -3,7 +3,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { TypeAnimation } from 'react-type-animation'; 
 import v1 from '../assets/about/viedo.mp4'; 
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaArrowDown, FaPhone, FaEye, FaRocket } from 'react-icons/fa';
 import { strings } from '../strings';
 
 const HeroSection = ({ language }) => {
@@ -13,6 +13,7 @@ const HeroSection = ({ language }) => {
   });
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [statsVisible, setStatsVisible] = useState(false);
 
   // Set language for strings
   strings.setLanguage(language);
@@ -27,8 +28,11 @@ const HeroSection = ({ language }) => {
   useEffect(() => {
     if (inView) {
       controls.start('visible');
+      // Show stats after a delay
+      setTimeout(() => setStatsVisible(true), 3000);
     } else {
       controls.start('hidden');
+      setStatsVisible(false);
     }
   }, [controls, inView]);
 
@@ -38,6 +42,31 @@ const HeroSection = ({ language }) => {
 
   const handlePause = () => {
     setIsPlaying(false);
+  };
+
+  const scrollToNext = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
+
+  const handleContactClick = () => {
+    // Scroll to contact section or open WhatsApp
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Fallback to WhatsApp
+      window.open('https://wa.me/966501234567', '_blank');
+    }
+  };
+
+  const handleProjectsClick = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const variants = {
@@ -168,7 +197,134 @@ const HeroSection = ({ language }) => {
         >
           {strings.hero.description}
         </motion.p>
+
+        {/* Call-to-Action Buttons */}
+        <motion.div
+          className="flex flex-col  mb-4 sm:flex-row gap-4 mt-8 justify-center items-center"
+          initial="hidden"
+          animate={controls}
+          variants={{
+            hidden: { 
+              opacity: 0, 
+              y: 50
+            },
+            visible: { 
+              opacity: 1, 
+              y: 0,
+              transition: { 
+                duration: 1, 
+                delay: 3,
+                ease: "easeOut"
+              } 
+            },
+          }}
+        >
+          <motion.button
+            onClick={handleContactClick}
+            className="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FaPhone />
+            {strings.hero.contactUs}
+          </motion.button>
+          
+          <motion.button
+            onClick={handleProjectsClick}
+            className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FaEye />
+            {strings.hero.viewProjects}
+          </motion.button>
+        </motion.div>
+
+        {/* Animated Statistics */}
+        {statsVisible && (
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-3 mt-3 gap-6 mt-12 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <motion.div
+              className="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20"
+              whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="text-4xl font-bold text-white mb-2"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 1 }}
+              >
+                5+
+              </motion.div>
+              <div className="text-white text-sm">
+                {language === 'ar' ? 'سنوات من الخبرة' : 'Years Experience'}
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20"
+              whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="text-4xl font-bold text-white mb-2"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+              >
+                100+
+              </motion.div>
+              <div className="text-white text-sm">
+                {language === 'ar' ? 'مشروع مكتمل' : 'Projects Completed'}
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20"
+              whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="text-4xl font-bold text-white mb-2"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.4 }}
+              >
+                50+
+              </motion.div>
+              <div className="text-white text-sm">
+                {language === 'ar' ? 'عميل راضي' : 'Happy Clients'}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 cursor-pointer"
+        onClick={scrollToNext}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 4 }}
+        whileHover={{ scale: 1.1 }}
+      >
+        <motion.div
+          className="flex flex-col items-center text-white"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          {/* <div className="text-sm mb-2 opacity-80 mt-12">
+            {strings.hero.scrollDown}
+          </div> */}
+          <FaArrowDown className="text-2xl opacity-80" />
+        </motion.div>
+      </motion.div>
 
 
     </section>
