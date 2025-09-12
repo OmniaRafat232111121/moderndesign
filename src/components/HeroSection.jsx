@@ -3,7 +3,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { TypeAnimation } from 'react-type-animation'; 
 import v1 from '../assets/about/viedo.mp4'; 
-import { FaWhatsapp, FaArrowDown, FaPhone, FaEye, FaRocket } from 'react-icons/fa';
+import { FaWhatsapp, FaArrowDown, FaPhone, FaEye, FaRocket, FaInstagram, FaLinkedin, FaTwitter, FaStar } from 'react-icons/fa';
 import { strings } from '../strings';
 
 const HeroSection = ({ language }) => {
@@ -14,6 +14,7 @@ const HeroSection = ({ language }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [statsVisible, setStatsVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Set language for strings
   strings.setLanguage(language);
@@ -38,6 +39,7 @@ const HeroSection = ({ language }) => {
 
   const handlePlay = () => {
     setIsPlaying(true);
+    setIsLoading(false);
   };
 
   const handlePause = () => {
@@ -57,7 +59,7 @@ const HeroSection = ({ language }) => {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     } else {
-      // Fallback to WhatsApp
+      // Fallback to WhatsApp - Modern Design
       window.open('https://wa.me/966501234567', '_blank');
     }
   };
@@ -79,6 +81,31 @@ const HeroSection = ({ language }) => {
       ref={ref}
       className="relative h-[70vh] bg-primary flex items-center justify-center overflow-hidden"
     >
+      {/* Loading Screen */}
+      {isLoading && (
+        <motion.div
+          className="absolute inset-0 z-50 bg-primary flex items-center justify-center"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          transition={{ duration: 1, delay: 2 }}
+        >
+          <div className="text-center">
+            <motion.div
+              className="w-16 h-16 border-4 border-white border-opacity-30 border-t-white rounded-full mx-auto mb-4"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+            />
+            <motion.p
+              className="text-white text-lg font-bold"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {language === 'ar' ? 'جاري التحميل...' : 'Loading...'}
+            </motion.p>
+          </div>
+        </motion.div>
+      )}
       {/* Video Background */}
       <motion.video
         className="absolute inset-0 w-full h-full object-cover"
@@ -96,10 +123,72 @@ const HeroSection = ({ language }) => {
         Your browser does not support the video tag.
       </motion.video>
 
-      {/* Overlay (only visible when video is playing) */}
+      {/* Dynamic Gradient Overlay */}
       {isPlaying && (
-        <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+        <div className="absolute inset-0 z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-secondary/20"></div>
+          <div className="absolute inset-0 bg-black opacity-40"></div>
+        </div>
       )}
+
+      {/* Floating Geometric Elements */}
+      <div className="absolute inset-0 z-5 overflow-hidden">
+        <motion.div
+          className="absolute top-20 left-10 w-16 h-16 border-2 border-white border-opacity-20 rounded-full"
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 180, 360],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute top-32 right-16 w-12 h-12 bg-white bg-opacity-10 rounded-lg"
+          animate={{
+            y: [0, 15, 0],
+            rotate: [0, -90, 0],
+            x: [0, 10, 0]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+        <motion.div
+          className="absolute bottom-32 left-20 w-8 h-8 border-2 border-white border-opacity-30 transform rotate-45"
+          animate={{
+            y: [0, -25, 0],
+            rotate: [45, 225, 45],
+            scale: [1, 0.8, 1]
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 right-8 w-6 h-6 bg-white bg-opacity-15 rounded-full"
+          animate={{
+            y: [0, -30, 0],
+            x: [0, -15, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5
+          }}
+        />
+      </div>
 
       {/* Hero Content with Enhanced Arabic-English Support */}
       <div 
@@ -113,14 +202,19 @@ const HeroSection = ({ language }) => {
         }}
       >
         <motion.h1
-          className={`font-bold mb-6 px-4 leading-tight ${language === 'ar' ? 'font-ar' : 'font-en'}`}
+          className={`font-bold mb-6 px-4 leading-tight ${language === 'ar' ? 'font-ar' : 'font-en'} relative`}
           style={{
             fontSize: language === 'ar' ? 'clamp(1.5rem, 4vw, 3rem)' : 'clamp(1.75rem, 4.5vw, 3.5rem)',
             lineHeight: language === 'ar' ? '1.3' : '1.2',
             fontWeight: '700',
             textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
             wordSpacing: language === 'ar' ? '0.1em' : 'normal',
-            letterSpacing: language === 'en' ? '0.02em' : 'normal'
+            letterSpacing: language === 'en' ? '0.02em' : 'normal',
+            background: 'linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff)',
+            backgroundSize: '200% 200%',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            animation: 'gradientShift 3s ease-in-out infinite'
           }}
           initial="hidden"
           animate={controls}
@@ -305,6 +399,9 @@ const HeroSection = ({ language }) => {
         )}
       </div>
 
+     
+  
+
       {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 cursor-pointer"
@@ -326,6 +423,40 @@ const HeroSection = ({ language }) => {
         </motion.div>
       </motion.div>
 
+      {/* Trust Indicators */}
+      <motion.div
+        className="absolute top-8 left-8 z-30 flex items-center gap-4"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 2.5 }}
+      >
+        <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-full px-4 py-2 border border-white border-opacity-20">
+          <span className="text-white text-sm font-medium">
+            {language === 'ar' ? '✓ معتمد' : '✓ Certified'}
+          </span>
+        </div>
+        <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-full px-4 py-2 border border-white border-opacity-20">
+          <span className="text-white text-sm font-medium">
+            {language === 'ar' ? '⭐ 5 نجوم' : '⭐ 5 Stars'}
+          </span>
+        </div>
+      </motion.div>
+
+      {/* Pulse Effect */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        animate={{
+          scale: [1, 1.02, 1],
+          opacity: [0.1, 0.2, 0.1]
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      >
+        <div className="w-full h-full bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full" />
+      </motion.div>
 
     </section>
   );
